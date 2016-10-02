@@ -3,11 +3,18 @@
 
 #include <QGraphicsTextItem>
 
+//A class to represnet a score
 class Score : public QGraphicsTextItem {
 public:
+
+    //Constructor
     Score(QGraphicsItem *parent = NULL);
+
+    //Setters
     void increase(unsigned int);
     void decrease(unsigned int);
+
+    //Getters
     int getScore();
 
 private:

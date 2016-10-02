@@ -1,10 +1,4 @@
-#include <QTimer>
 #include <QApplication>
-#include <QGraphicsScene>
-#include <QgraphicsView>
-#include <QGraphicsRectItem>
-
-#include "Player.hpp"
 
 #include "Game.hpp"
 
