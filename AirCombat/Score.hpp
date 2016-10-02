@@ -12,10 +12,7 @@ public:
 
     //Setters
     void increase(unsigned int);
-    void decrease(unsigned int);
 
-    //Getters
-    int getScore();
 
 private:
     int score;

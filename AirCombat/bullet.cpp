@@ -1,5 +1,6 @@
 #include "Bullet.hpp"
 #include "Enemy.hpp"
+#include "Game.hpp"
 
 
 
@@ -27,6 +28,9 @@ void Bullet::move() {
     QList<QGraphicsItem *> items = collidingItems();
     for(int i = 0; i < items.size(); i++)
         if (typeid(*items[i]) == typeid(Enemy)) {
+
+            //Increase the score
+            theGame->theScore->increase(1); //CHANGE
 
             //remove them both
             scene()->removeItem(items[i]);

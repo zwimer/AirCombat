@@ -16,10 +16,10 @@ Score::Score(QGraphicsItem *parent) : QGraphicsTextItem(parent) {
 
 //Increase the score by x
 void Score::increase(unsigned int x) {
-    score += x;
-}
 
-//Decrease the score by x
-void Score::decrease(unsigned int x) {
-    score -= (int)x;
+    //Increase the score
+    score += x;
+
+    //Redraw the score
+    setPlainText(QString("Score: ") + QString::number(score));
 }

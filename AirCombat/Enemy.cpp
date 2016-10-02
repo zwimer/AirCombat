@@ -1,4 +1,7 @@
 #include "Enemy.hpp"
+#include "Health.hpp"
+#include "Game.hpp"
+
 #include <stdlib.h>
 #include <QTimer>
 #include <QGraphicsScene>
@@ -28,6 +31,10 @@ void Enemy::move() {
 
     //If the Enemy is off the screen, then delete it
     if (pos().y() > scene()->height()) {
+
+        //Decrement health
+        theGame->P1Health->decrease(1);
+
         scene()->removeItem(this);
         delete this;
     }

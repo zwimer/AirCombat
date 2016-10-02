@@ -1,10 +1,15 @@
 #include "Game.hpp"
 
+#include <QTimer>
+#include <QGraphicsScene>
+#include <QgraphicsView>
+#include <QGraphicsRectItem>
+
 //Game constructor
 Game::Game(QWidget *parent) {
 
 	//Create a scene and define it's size
-	QGraphicsScene *theScene = new QGraphicsScene();
+    theScene = new QGraphicsScene();
 	theScene->setSceneRect(0,0,800,600);
 
 	//Create and setup the window
@@ -14,10 +19,17 @@ Game::Game(QWidget *parent) {
 	theWindow->setFixedSize(800,600);
 	
 	//Create a player, and center him
-	Player *P1 = new Player();
+    P1 = new Player();
 	P1->setRect(0,0,100,100);
 	P1->setPos(theWindow->width()/2, theWindow->height() - P1->rect().height());
 	theScene->addItem(P1);
+
+    //Create a new score and health
+    theScore = new Score();
+    theScene->addItem(theScore);
+    P1Health = new Health();
+    P1Health->setPos(P1Health->x(), P1Health->y()+25);
+    theScene->addItem(P1Health);
 
 	//Spawn enemys every 2 seconds
 	QTimer *t = new QTimer();
