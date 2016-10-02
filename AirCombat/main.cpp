@@ -4,13 +4,11 @@
 #include <QgraphicsView>
 #include <QGraphicsRectItem>
 
-#include <Player.hpp>
-
+#include "Player.hpp"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-
 
     //Create a scene
     QGraphicsScene *theScene = new QGraphicsScene();

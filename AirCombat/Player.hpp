@@ -3,12 +3,12 @@
 
 #include <QObject>
 #include <QKeyEvent>
-#include <QGraphicsScene>
 #include <QGraphicsRectItem>
 
 
+//Note: must first inheret from QObject, THEN from ...
 class Player : public QObject, public QGraphicsRectItem {
-    Q_OBJECT
+    Q_OBJECT;
 public:
 
     //Constructor
@@ -16,6 +16,7 @@ public:
 
     //Allows the player to move
     void keyPressEvent(QKeyEvent *e);
+
 
 public slots:
     void spawn();
@@ -25,4 +26,4 @@ private:
 
 };
 
-#endif // PLAYER_H
+#endif

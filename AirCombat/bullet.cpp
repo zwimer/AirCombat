@@ -1,4 +1,8 @@
 #include "Bullet.hpp"
+#include "Enemy.hpp"
+
+
+
 #include <QTimer>
 #include <QGraphicsScene>
 
@@ -22,7 +26,7 @@ void Bullet::move() {
     //If bullet collides with enemy, destroy both
     QList<QGraphicsItem *> items = collidingItems();
     for(int i = 0; i < items.size(); i++)
-        if (typeid(*items[i]) == typeId(Enemy)) {
+        if (typeid(*items[i]) == typeid(Enemy)) {
 
             //remove them both
             scene()->removeItem(items[i]);
@@ -37,9 +41,10 @@ void Bullet::move() {
         }
 
     //CHANGE - also check afterwards
+    //CHANGE - could be > 1 collision
 
     //Move
-    setPos(x(),y()-10);
+    setPos(x(),y()-20);
 
     //If the bullet is off the screen, then delete it
     if (pos().y() + this->rect().height() < 0) {

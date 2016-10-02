@@ -10,7 +10,7 @@ Enemy::Enemy() {
     setPos(rand()%(800-100), 0); //CHANGE
 
     //Set the size
-    setRect(0,0,10,50);
+    setRect(0,0,100,100);
 
     //Connect the move function to a timer
     QTimer *t = new QTimer();

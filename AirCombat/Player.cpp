@@ -1,7 +1,8 @@
 #include "Player.hpp"
-#include "Bullet.hpp"
 #include "Enemy.hpp"
+#include "Bullet.hpp"
 
+#include <QGraphicsScene>
 
 Player::Player() {
 
@@ -11,19 +12,18 @@ Player::Player() {
     //Make this the focus item
     this->setFocus();
 }
-
 void Player::keyPressEvent(QKeyEvent *e) {
 
     //Move left
     if (e->key() == Qt::Key_Left) {
         if (pos().x() > 0)
-             setPos(x()-10,y());
+             setPos(x()-25,y());
     }
 
     //Move right
     else if (e->key() == Qt::Key_Right) {
         if (pos().x() + 100 < 800)    //CHANGE
-            setPos(x()+10,y());
+            setPos(x()+25,y());
     }
 
     //Shoot
