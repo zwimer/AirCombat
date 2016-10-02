@@ -1,3 +1,4 @@
+#include <QTimer>
 #include <QApplication>
 #include <QGraphicsScene>
 #include <QgraphicsView>
@@ -41,6 +42,11 @@ int main(int argc, char *argv[])
 
     //Make the scene visible
     theWindow->show();
+
+    //Spawn enemys every 2 seconds
+    QTimer *t = new QTimer();
+    QObject::connect(t, SIGNAL(timeout()), P1, SLOT(spawn()));
+    t->start(2000);
 
     //Finish the program
     return a.exec();

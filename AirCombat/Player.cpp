@@ -1,5 +1,6 @@
 #include "Player.hpp"
 #include "Bullet.hpp"
+#include "Enemy.hpp"
 
 
 Player::Player() {
@@ -15,14 +16,14 @@ void Player::keyPressEvent(QKeyEvent *e) {
 
     //Move left
     if (e->key() == Qt::Key_Left) {
-
-        setPos(x()-10,y());
+        if (pos().x() > 0)
+             setPos(x()-10,y());
     }
 
     //Move right
     else if (e->key() == Qt::Key_Right) {
-
-        setPos(x()+10,y());
+        if (pos().x() + 100 < 800)    //CHANGE
+            setPos(x()+10,y());
     }
 
     //Shoot
@@ -36,4 +37,11 @@ void Player::keyPressEvent(QKeyEvent *e) {
         scene()->addItem(b);
     }
 
+}
+
+//Create a new enemy
+void Player::spawn() {
+
+    Enemy *e = new Enemy();
+    scene()->addItem(e);
 }
