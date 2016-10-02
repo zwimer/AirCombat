@@ -5,8 +5,11 @@
 class Game {
 
 public:
-    Game();
+    Game(QWidget *parent = NULL);
 
+    QGraphicsScene * theScene;
+    Player *P1;
+    Score *theScore;
 private:
 
 };
