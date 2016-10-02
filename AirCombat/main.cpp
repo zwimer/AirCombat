@@ -3,7 +3,7 @@
 #include <QgraphicsView>
 #include <QGraphicsRectItem>
 
-
+#include <Player.hpp>
 
 
 int main(int argc, char *argv[])
@@ -11,11 +11,11 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
 
-    //create a scene
+    //Create a scene
     QGraphicsScene *theScene = new QGraphicsScene();
 
-    //create a player
-    QGraphicsRectItem * P1 = new QGraphicsRectItem();
+    //Create a player
+    Player *P1 = new Player();
 
     //Make a new rect starting at (0,0) that is (100,100) pixels
     P1->setRect(0,0,100,100);
@@ -24,11 +24,24 @@ int main(int argc, char *argv[])
     theScene->addItem(P1);
 
     //add a view
-    QGraphicsView * theWindow = new QGraphicsView(theScene);
+    QGraphicsView *theWindow = new QGraphicsView(theScene);
+
+    //Prevent scrolling
+    theWindow->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    theWindow->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+    //Define the window size
+    theWindow->setFixedSize(800,600);
+
+    //Lock the scene in place in the window
+    theScene->setSceneRect(0,0,800,600);
+
+    //Set the starting location of the player
+    P1->setPos(theWindow->width()/2, theWindow->height() - P1->rect().height());
 
     //Make the scene visible
     theWindow->show();
 
-
+    //Finish the program
     return a.exec();
 }
