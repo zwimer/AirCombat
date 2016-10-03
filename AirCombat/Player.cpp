@@ -44,10 +44,3 @@ void Player::keyPressEvent(QKeyEvent *e) {
     //Shoot
     else if (e->key() == Qt::Key_Space) { fire(new Bullet()); }
 }
-
-//Create a new enemy and add him to the scene
-void Player::spawn() {
-
-    Enemy *e = new BasicEnemy();   //CHANGE
-    scene()->addItem(e);
-}

@@ -15,9 +15,6 @@ public:
 
 private:
 
-    //The object that called this constructor
-    Shooter* Owner;
-
 };
 
 #endif // SHOOTER_H

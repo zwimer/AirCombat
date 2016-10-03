@@ -3,8 +3,7 @@
 
 #include "AutoMove.hpp"
 
-class Projectile: public AutoMove
-{
+class Projectile: public AutoMove {
 public:
     Projectile()=delete;
     Projectile(int s);

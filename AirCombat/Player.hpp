@@ -10,8 +10,7 @@
 #include "Shooter.hpp"
 
 //Note: must first inheret from QObject, THEN from ...
-class Player : public QObject, /*public QGraphicsRectItem*/ public Shooter {
-    Q_OBJECT;
+class Player : public Shooter {
 public:
 
     //Constructor
@@ -23,9 +22,6 @@ public:
 
     //The Player's health
     Health *health;
-
-public slots:
-    void spawn();
 
 private:
 

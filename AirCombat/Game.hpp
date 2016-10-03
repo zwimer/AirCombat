@@ -4,8 +4,10 @@
 #include "Score.hpp"
 #include "Player.hpp"
 
-class Game {
+#include <QObject>
 
+class Game : public QObject {
+    Q_OBJECT;
 public:
 
     //Constructor
@@ -20,7 +22,10 @@ public:
     static const uint Height;
     static const uint Width;
 
-private:
+public slots:
+
+    //Spawn enemies
+    void spawn();
 
 };
 

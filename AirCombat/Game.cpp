@@ -1,4 +1,5 @@
 #include "Game.hpp"
+#include "BasicEnemy.hpp"
 
 #include <QTimer>
 #include <QGraphicsScene>
@@ -33,10 +34,17 @@ Game::Game() {
     theScene->addItem(theScore);
 
 	//Spawn enemys every 2 seconds
-	QTimer *t = new QTimer();
-	QObject::connect(t, SIGNAL(timeout()), P1, SLOT(spawn()));
-	t->start(2000);
+    QTimer *t = new QTimer();
+    QObject::connect(t, SIGNAL(timeout()), this, SLOT(spawn()));
+    t->start(2000);
 
 	//Make the scene visible
 	theWindow->show();
+}
+
+//Create a new enemy and add it to the scene
+void Game::spawn() {
+
+    Enemy *e = new BasicEnemy();   //CHANGE
+    theScene->addItem(e);
 }

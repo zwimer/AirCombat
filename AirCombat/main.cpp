@@ -2,10 +2,11 @@
 
 #include "Game.hpp"
 
+//Must make the game global
 Game * theGame;
 
-int main(int argc, char *argv[])
-{
+//Main function
+int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
 
     //Run the game
