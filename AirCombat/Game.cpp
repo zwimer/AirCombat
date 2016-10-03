@@ -6,7 +6,7 @@
 #include <QGraphicsRectItem>
 
 //Game constructor
-Game::Game(QWidget *parent) {
+Game::Game() {
 
 	//Create a scene and define it's size
     theScene = new QGraphicsScene();

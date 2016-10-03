@@ -3,12 +3,12 @@
 #include "Bullet.hpp"
 #include "Game.hpp"
 
-
 //Set player's default health
 const int Player::DefaultHealth = 3;
 
+
 //Constructor
-Player::Player(QGraphicsScene *theScene) {
+Player::Player(QGraphicsScene *theScene) : Shooter(this) {
 
     //Make this player focusable
     this->setFlag(QGraphicsItem::ItemIsFocusable);
@@ -43,15 +43,7 @@ void Player::keyPressEvent(QKeyEvent *e) {
     }
 
     //Shoot
-    else if (e->key() == Qt::Key_Space) {
-
-        //Create a new bullet
-        Bullet *b = new Bullet();
-        b->setPos(x(),y());
-
-        //Add the bullet to the scene
-        scene()->addItem(b);
-    }
+    else if (e->key() == Qt::Key_Space) { fire(new Bullet()); }
 }
 
 //Create a new enemy

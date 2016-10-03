@@ -7,9 +7,10 @@
 #include <QGraphicsScene>
 #include <QGraphicsRectItem>
 
+#include "Shooter.hpp"
 
 //Note: must first inheret from QObject, THEN from ...
-class Player : public QObject, public QGraphicsRectItem {
+class Player : public QObject, /*public QGraphicsRectItem*/ public Shooter {
     Q_OBJECT;
 public:
 
@@ -19,8 +20,6 @@ public:
 
     //Allows the player to move
     void keyPressEvent(QKeyEvent *e);
-
-
 
     //The Player's health
     Health *health;
