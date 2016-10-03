@@ -22,7 +22,6 @@ SOURCES += main.cpp \
     Projectile.cpp \
     Shooter.cpp \
     BasicEnemy.cpp \
-    Printable.cpp \
     AutoMove.cpp
 
 HEADERS  += \
@@ -35,7 +34,6 @@ HEADERS  += \
     Projectile.hpp \
     Shooter.hpp \
     BasicEnemy.hpp \
-    Printable.hpp \
     main.hpp \
     AutoMove.hpp \
     AutoMove.hpp
