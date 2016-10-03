@@ -4,7 +4,7 @@
 #include "Health.hpp"
 #include <QObject>
 #include <QKeyEvent>
-#include <QGraphicsScene>
+#include <QGraphicsView>
 #include <QGraphicsRectItem>
 
 #include "Shooter.hpp"
@@ -14,7 +14,7 @@ class Player : public Shooter {
 public:
 
     //Constructor
-    Player(QGraphicsScene *theScene);
+    Player(QGraphicsView *theWindow);
     ~Player();
 
     //Allows the player to move

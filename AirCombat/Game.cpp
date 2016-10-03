@@ -24,10 +24,7 @@ Game::Game() {
     theWindow->setFixedSize(Width,Height);
 	
 	//Create a player, and center him
-    P1 = new Player(theScene);
-    P1->setRect(0,0,100,100);   //CHANGE, move into player
-	P1->setPos(theWindow->width()/2, theWindow->height() - P1->rect().height());
-	theScene->addItem(P1);
+    P1 = new Player(theWindow);
 
     //Create a new score and health
     theScore = new Score();
@@ -42,9 +39,10 @@ Game::Game() {
 	theWindow->show();
 }
 
+//Destructor
+Game::~Game() { delete theScore; delete P1; delete theScene; }
+
 //Create a new enemy and add it to the scene
 void Game::spawn() {
-
-    Enemy *e = new BasicEnemy();   //CHANGE
-    theScene->addItem(e);
+    theScene->addItem(new BasicEnemy()); //CHANGE
 }

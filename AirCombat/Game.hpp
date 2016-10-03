@@ -13,6 +13,9 @@ public:
     //Constructor
     Game();
 
+    //Destructor
+    ~Game();
+
     //Representation
     Player *P1;
     Score *theScore;

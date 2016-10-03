@@ -3,11 +3,14 @@
 #include "Bullet.hpp"
 #include "Game.hpp"
 
+#include <QGraphicsScene>
+
+
 //Set player's default health
 const int Player::DefaultHealth = 3;
 
 //Constructor
-Player::Player(QGraphicsScene *theScene) {
+Player::Player(QGraphicsView *theWindow) {
 
     //Make this player focusable
     this->setFlag(QGraphicsItem::ItemIsFocusable);
@@ -18,13 +21,18 @@ Player::Player(QGraphicsScene *theScene) {
     //Make the Player's health
     health = new Health(Player::DefaultHealth);
     health->setPos(health->x(), health->y()+25);
-    theScene->addItem(health);
+    theWindow->scene()->addItem(health);
+
+    //Set the player's size and location
+    setRect(0,0,100,100);   //CHANGE, move into player
+    setPos(theWindow->width()/2, theWindow->height() - rect().height());
+
+    //Add the player to the scene
+    theWindow->scene()->addItem(this);
 }
 
 //Destructor
-Player::~Player() {
-    delete health;
-}
+Player::~Player() { delete health; }
 
 //If a button was pressed
 void Player::keyPressEvent(QKeyEvent *e) {

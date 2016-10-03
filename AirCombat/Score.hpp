@@ -13,7 +13,6 @@ public:
     //Setters
     void increase(unsigned int);
 
-
 private:
     int score;
 };
