@@ -39,3 +39,6 @@ HEADERS  += \
     AutoMove.hpp
 
 FORMS    +=
+
+RESOURCES += \
+    PlayerRes.qrc
