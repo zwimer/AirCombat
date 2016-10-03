@@ -21,9 +21,9 @@ SOURCES += main.cpp \
     Health.cpp \
     Projectile.cpp \
     Shooter.cpp \
-    Moveable.cpp \
     BasicEnemy.cpp \
-    Printable.cpp
+    Printable.cpp \
+    AutoMove.cpp
 
 HEADERS  += \
     Bullet.hpp \
@@ -34,9 +34,10 @@ HEADERS  += \
     Health.hpp \
     Projectile.hpp \
     Shooter.hpp \
-    Moveable.hpp \
     BasicEnemy.hpp \
     Printable.hpp \
-    main.hpp
+    main.hpp \
+    AutoMove.hpp \
+    AutoMove.hpp
 
 FORMS    +=

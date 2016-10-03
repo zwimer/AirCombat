@@ -1,13 +1,13 @@
-#ifndef MOVEABLE_H
-#define MOVEABLE_H
+#ifndef AUTOMOVE_H
+#define AUTOMOVE_H
 
 #include "main.hpp"
 #include <QObject>
 
-class Moveable : public QObject {
+class AutoMove : public QObject {
     Q_OBJECT;
 public:
-    Moveable(uint s = 0);
+    AutoMove(uint s = 0);
 
 public slots:
     virtual void move()=0;

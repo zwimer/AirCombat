@@ -1,12 +1,12 @@
 #ifndef ENEMY_H
 #define ENEMY_H
 
-#include "Moveable.hpp"
+#include "AutoMove.hpp"
 #include <QGraphicsRectItem>
 
 
 //Note: must first inheret from QObject, THEN from ...
-class Enemy : public Moveable, public QGraphicsRectItem {
+class Enemy : public AutoMove, public QGraphicsRectItem {
 public:
     Enemy();
 
