@@ -18,7 +18,12 @@ SOURCES += main.cpp \
     Enemy.cpp \
     Player.cpp \
     Score.cpp \
-    Health.cpp
+    Health.cpp \
+    Projectile.cpp \
+    Shooter.cpp \
+    Moveable.cpp \
+    BasicEnemy.cpp \
+    Printable.cpp
 
 HEADERS  += \
     Bullet.hpp \
@@ -26,6 +31,11 @@ HEADERS  += \
     Enemy.hpp \
     Player.hpp \
     Score.hpp \
-    Health.hpp
+    Health.hpp \
+    Projectile.hpp \
+    Shooter.hpp \
+    Moveable.hpp \
+    BasicEnemy.hpp \
+    Printable.hpp
 
 FORMS    +=

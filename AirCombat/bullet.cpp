@@ -1,5 +1,5 @@
 #include "Bullet.hpp"
-#include "Enemy.hpp"
+#include "BasicEnemy.hpp"
 #include "Game.hpp"
 
 
@@ -27,7 +27,7 @@ void Bullet::move() {
     //If bullet collides with enemy, destroy both
     QList<QGraphicsItem *> items = collidingItems();
     for(int i = 0; i < items.size(); i++)
-        if (typeid(*items[i]) == typeid(Enemy)) {
+        if (typeid(*items[i]) == typeid(BasicEnemy)) {
 
             //Increase the score
             theGame->theScore->increase(1); //CHANGE

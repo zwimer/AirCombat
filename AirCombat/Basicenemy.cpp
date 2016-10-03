@@ -1,4 +1,4 @@
-#include "Enemy.hpp"
+#include "BasicEnemy.hpp"
 #include "Health.hpp"
 #include "Game.hpp"
 
@@ -6,8 +6,8 @@
 #include <QTimer>
 #include <QGraphicsScene>
 
-#if 1
-Enemy::Enemy() {
+
+BasicEnemy::BasicEnemy() {
 
     //Randomize location
     setPos(rand()%(800-100), 0); //CHANGE
@@ -24,12 +24,12 @@ Enemy::Enemy() {
 }
 
 //The bullet's move function
-void Enemy::move() {
+void BasicEnemy::move() {
 
     //Move
     setPos(x(),y()+10);
 
-    //If the Enemy is off the screen, then delete it
+    //If the BasicEnemy is off the screen, then delete it
     if (pos().y() > scene()->height()) {
 
         //Decrement health
@@ -39,4 +39,3 @@ void Enemy::move() {
         delete this;
     }
 }
-#endif
