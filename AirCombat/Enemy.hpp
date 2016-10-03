@@ -2,13 +2,17 @@
 #define ENEMY_H
 
 #include "AutoMove.hpp"
-#include <QGraphicsRectItem>
 
 
 //Note: must first inheret from QObject, THEN from ...
-class Enemy : public AutoMove, public QGraphicsRectItem {
+class Enemy : public AutoMove {
 public:
-    Enemy();
+    Enemy()=delete;
+    Enemy(int s);
+
+protected:
+    void afterMove();
+    void beforeMove();
 
 public slots:
     void move();

@@ -1,7 +1,21 @@
 #include "AutoMove.hpp"
 
-AutoMove::AutoMove(uint s) : speed(s) {}
+AutoMove::AutoMove(int s) : speed(s) {}
 
-uint AutoMove::getSpeed() const {
+int AutoMove::getSpeed() const {
     return speed;
+}
+
+
+//The bullet's move function
+void AutoMove::move() {
+
+    //Before move
+    beforeMove();
+
+    //Move
+    setPos(x(),y()+speed);
+
+    //After move
+    afterMove();
 }

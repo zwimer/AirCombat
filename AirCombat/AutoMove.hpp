@@ -1,24 +1,35 @@
 #ifndef AUTOMOVE_H
 #define AUTOMOVE_H
 
-#include "main.hpp"
 #include <QObject>
+#include <QGraphicsRectItem>
 
-class AutoMove : public QObject {
+class AutoMove : public QObject, public QGraphicsRectItem {
     Q_OBJECT;
 public:
-    AutoMove(uint s = 0);
+
+    //Constructor
+    AutoMove()=delete;
+    AutoMove(int s);
 
 public slots:
-    virtual void move()=0;
+
+    //Move
+    void move();
 
 protected:
 
     //Returns speed
-    uint getSpeed() const;
+    int getSpeed() const;
+
+    //To be implemented by derived classes
+    virtual void afterMove()=0;
+    virtual void beforeMove()=0;
 
 private:
-    const uint speed;
+
+    //Note, if this is positive, it moves down the screen
+    const int speed;
 
 };
 
