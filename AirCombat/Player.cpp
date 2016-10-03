@@ -8,7 +8,7 @@ const int Player::DefaultHealth = 3;
 
 
 //Constructor
-Player::Player(QGraphicsScene *theScene) : Shooter(this) {
+Player::Player(QGraphicsScene *theScene) {
 
     //Make this player focusable
     this->setFlag(QGraphicsItem::ItemIsFocusable);

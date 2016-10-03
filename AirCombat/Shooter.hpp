@@ -7,7 +7,7 @@
 
 class Shooter : public QGraphicsRectItem {
 public:
-    Shooter(Shooter *p);
+    Shooter();
     virtual ~Shooter();
 
     //Fire
