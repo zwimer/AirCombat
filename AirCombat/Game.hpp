@@ -7,11 +7,15 @@
 class Game {
 
 public:
+
+    //Constructor
     Game();
 
-    QGraphicsScene *theScene;
+    //Representation
     Player *P1;
     Score *theScore;
+    QGraphicsScene *theScene;
+
 private:
 
 };

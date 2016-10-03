@@ -1,16 +1,15 @@
 #ifndef BASICENEMY_H
 #define BASICENEMY_H
 
-#include <QObject>
-#include <QGraphicsRectItem>
+#include "Enemy.hpp"
 
-class BasicEnemy : public QObject, public QGraphicsRectItem {
-    Q_OBJECT;
+//A basic enemy
+class BasicEnemy : public Enemy {
 public:
     BasicEnemy();
 
-public slots:
-    void move();
+    //The speed of basic enemy
+    static const int Speed;
 };
 
 #endif // BASICENEMY_H

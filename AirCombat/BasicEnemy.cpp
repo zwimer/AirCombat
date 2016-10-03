@@ -6,8 +6,9 @@
 #include <QTimer>
 #include <QGraphicsScene>
 
+const int BasicEnemy::Speed = 10;
 
-BasicEnemy::BasicEnemy() {
+BasicEnemy::BasicEnemy() : Enemy(BasicEnemy::Speed) {
 
     //Randomize location
     setPos(rand()%(800-100), 0); //CHANGE
@@ -21,21 +22,4 @@ BasicEnemy::BasicEnemy() {
 
     //Have the timer call move every 50 ms
     t->start(50);
-}
-
-//The bullet's move function
-void BasicEnemy::move() {
-
-    //Move
-    setPos(x(),y()+10);
-
-    //If the BasicEnemy is off the screen, then delete it
-    if (pos().y() > scene()->height()) {
-
-        //Decrement health
-        theGame->P1->health->decrease(1);
-
-        scene()->removeItem(this);
-        delete this;
-    }
 }
