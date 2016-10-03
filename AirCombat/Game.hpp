@@ -13,7 +13,6 @@ public:
     QGraphicsScene * theScene;
     Player *P1;
     Score *theScore;
-    Health *P1Health;
 private:
 
 };

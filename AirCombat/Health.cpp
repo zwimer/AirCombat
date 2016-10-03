@@ -3,10 +3,10 @@
 #include <QFont>
 
 //Constructor
-Health::Health(QGraphicsItem *p) : QGraphicsTextItem(p) {
+Health::Health(uint h, QGraphicsItem *p) : QGraphicsTextItem(p) {
 
     //Initalize health
-    health = 3; //CHANGE
+    health = h; //CHANGE
 
     //Draw the text
     setPlainText(QString("Health: ") + QString::number(health));

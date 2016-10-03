@@ -33,7 +33,7 @@ void BasicEnemy::move() {
     if (pos().y() > scene()->height()) {
 
         //Decrement health
-        theGame->P1Health->decrease(1);
+        theGame->P1->health->decrease(1);
 
         scene()->removeItem(this);
         delete this;

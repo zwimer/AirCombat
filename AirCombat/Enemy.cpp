@@ -17,7 +17,7 @@ void Enemy::afterMove() {
     if (pos().y() > scene()->height()) {
 
         //Decrement health
-        theGame->P1Health->decrease(1);
+        theGame->P1->health->decrease(1);
 
         //Remove this item
         scene()->removeItem(this);

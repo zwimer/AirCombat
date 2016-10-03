@@ -1,17 +1,33 @@
 #include "Player.hpp"
 #include "BasicEnemy.hpp"
 #include "Bullet.hpp"
+#include "Game.hpp"
 
-#include <QGraphicsScene>
 
-Player::Player() {
+//Set player's default health
+const int Player::DefaultHealth = 3;
+
+//Constructor
+Player::Player(QGraphicsScene *theScene) {
 
     //Make this player focusable
     this->setFlag(QGraphicsItem::ItemIsFocusable);
 
     //Make this the focus item
     this->setFocus();
+
+    //Make the Player's health
+    health = new Health(Player::DefaultHealth);
+    health->setPos(health->x(), health->y()+25);
+    theScene->addItem(health);
 }
+
+//Destructor
+Player::~Player() {
+    delete health;
+}
+
+//If a button was pressed
 void Player::keyPressEvent(QKeyEvent *e) {
 
     //Move left
@@ -36,7 +52,6 @@ void Player::keyPressEvent(QKeyEvent *e) {
         //Add the bullet to the scene
         scene()->addItem(b);
     }
-
 }
 
 //Create a new enemy
