@@ -8,12 +8,14 @@
 //Note: must first inheret from QObject, THEN from ...
 class Bullet : public Projectile {
 public:
+
+    //Constructor
     Bullet();
 
 private:
 
     //The bullet's speed
-    static const int Speed;
+    static const uint Speed;
 };
 
 

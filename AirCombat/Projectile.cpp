@@ -6,7 +6,7 @@
 #include <QGraphicsScene>
 
 //Constructor
-Projectile::Projectile(int s) : AutoMove(s) {
+Projectile::Projectile(uint s) : AutoMove(-(int)s) {
 
     //Connect the move function to a timer
     QTimer *t = new QTimer();
@@ -16,6 +16,8 @@ Projectile::Projectile(int s) : AutoMove(s) {
     t->start(50);
 }
 
+//Destructor
+Projectile::~Projectile() {}
 
 //The projectile's afterMove function
 void Projectile::afterMove() { beforeMove(); }

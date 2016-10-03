@@ -6,14 +6,17 @@
 
 class Health : public QGraphicsTextItem{
 public:
+
+    //Constructor
+    Health()=delete;
     Health(uint h, QGraphicsItem *p = NULL);
 
     //Setters
     void decrease(unsigned int x);
 
-    //CONST EVERYTHING WHEN CHANGE
-
 private:
+
+    //Representation
     int health;
 };
 

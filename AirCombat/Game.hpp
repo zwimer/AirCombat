@@ -26,7 +26,6 @@ public slots:
 
     //Spawn enemies
     void spawn();
-
 };
 
 //Global variable

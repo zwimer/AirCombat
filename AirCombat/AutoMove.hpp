@@ -30,7 +30,8 @@ protected:
 
 private:
 
-    //Note, if this is positive, it moves down the screen
+    //Representation
+    //Note, positive, means move down
     const int speed;
 
 };

@@ -7,8 +7,12 @@
 
 class Shooter : public QGraphicsRectItem {
 public:
+
+    //Constructor
     Shooter();
-    virtual ~Shooter();
+
+    //Make class abstract
+    virtual ~Shooter()=0;
 
     //Fire
     void fire(Projectile *p);

@@ -6,6 +6,8 @@
 //A basic enemy
 class BasicEnemy : public Enemy {
 public:
+
+    //Construtor
     BasicEnemy();
 
     //Returns speed

@@ -3,7 +3,7 @@
 #include <QTimer>
 
 //Define the bullet's speed
-const int Bullet::Speed = -20;
+const uint Bullet::Speed = 20;
 
 Bullet::Bullet() : Projectile(Bullet::Speed) {
 
