@@ -2,10 +2,24 @@
 #include "Health.hpp"
 #include "Game.hpp"
 
+#include <stdlib.h>
+
+#include <QTimer>
 #include <QGraphicsScene>
 
 //Constructor
-Enemy::Enemy(int s) : AutoMove(s) {}
+Enemy::Enemy(int s) : AutoMove(s) {
+
+    //Randomize location
+    setPos(rand()%(800-100), 0); //CHANGE
+
+    //Connect the move function to a timer
+    QTimer *t = new QTimer();
+    connect(t, SIGNAL(timeout()), this, SLOT(move()));
+
+    //Have the timer call move every 50 ms
+    t->start(50);
+}
 
 //Call before every move
 bool Enemy::beforeMove() { return true; }
