@@ -1,9 +1,8 @@
 #ifndef ENEMY_H
 #define ENEMY_H
 
-#include <QObject>
+#include "Game.hpp"
 #include "AutoMove.hpp"
-#include <QObject>
 
 //Note: must first inheret from QObject, THEN from ...
 class Enemy : public AutoMove {
@@ -11,9 +10,10 @@ public:
 
     //Constructor
     Enemy()=delete;
-    Enemy(int s);
+    Enemy(uint s);
 
-
+    //Virtual methods
+    virtual inline uint getSpeed() const = 0;
 
 protected:
 

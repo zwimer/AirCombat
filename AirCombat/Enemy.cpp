@@ -1,17 +1,11 @@
 #include "Enemy.hpp"
-#include "Health.hpp"
 #include "Game.hpp"
-
-#include <stdlib.h>
 
 #include <QTimer>
 #include <QGraphicsScene>
 
 //Constructor
-Enemy::Enemy(int s) : AutoMove(s) {
-
-    //Randomize location
-    setPos(rand()%(800-100), 0); //CHANGE
+Enemy::Enemy(uint s) : AutoMove(s) {
 
     //Connect the move function to a timer
     QTimer *t = new QTimer();

@@ -6,7 +6,6 @@
 //Set player's default health
 const int Player::DefaultHealth = 3;
 
-
 //Constructor
 Player::Player(QGraphicsScene *theScene) {
 
@@ -46,9 +45,9 @@ void Player::keyPressEvent(QKeyEvent *e) {
     else if (e->key() == Qt::Key_Space) { fire(new Bullet()); }
 }
 
-//Create a new enemy
+//Create a new enemy and add him to the scene
 void Player::spawn() {
 
-    BasicEnemy *e = new BasicEnemy();
+    Enemy *e = new BasicEnemy();   //CHANGE
     scene()->addItem(e);
 }

@@ -5,22 +5,26 @@
 #include <QgraphicsView>
 #include <QGraphicsRectItem>
 
+//The Game's size
+const uint Game::Height = 600;
+const uint Game::Width = 800;
+
 //Game constructor
 Game::Game() {
 
 	//Create a scene and define it's size
     theScene = new QGraphicsScene();
-	theScene->setSceneRect(0,0,800,600);
+    theScene->setSceneRect(0,0,Width,Height);
 
 	//Create and setup the window
 	QGraphicsView *theWindow = new QGraphicsView(theScene);
 	theWindow->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 	theWindow->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-	theWindow->setFixedSize(800,600);
+    theWindow->setFixedSize(Width,Height);
 	
 	//Create a player, and center him
     P1 = new Player(theScene);
-	P1->setRect(0,0,100,100);
+    P1->setRect(0,0,100,100);   //CHANGE, move into player
 	P1->setPos(theWindow->width()/2, theWindow->height() - P1->rect().height());
 	theScene->addItem(P1);
 

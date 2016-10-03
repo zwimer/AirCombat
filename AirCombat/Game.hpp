@@ -16,6 +16,10 @@ public:
     Score *theScore;
     QGraphicsScene *theScene;
 
+    //Static const variables
+    static const uint Height;
+    static const uint Width;
+
 private:
 
 };
