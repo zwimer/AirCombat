@@ -5,7 +5,6 @@
 #include <QGraphicsRectItem>
 
 
-#if 1
 //Note: must first inheret from QObject, THEN from ...
 class Enemy : public QObject, public QGraphicsRectItem {
     Q_OBJECT;
@@ -16,7 +15,7 @@ public slots:
     void move();
 
 };
-#endif
+
 
 
 

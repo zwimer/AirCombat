@@ -1,5 +1,5 @@
 #include "Player.hpp"
-#include "Enemy.hpp"
+#include "BasicEnemy.hpp"
 #include "Bullet.hpp"
 
 #include <QGraphicsScene>
@@ -42,6 +42,6 @@ void Player::keyPressEvent(QKeyEvent *e) {
 //Create a new enemy
 void Player::spawn() {
 
-    Enemy *e = new Enemy();
+    BasicEnemy *e = new BasicEnemy();
     scene()->addItem(e);
 }
