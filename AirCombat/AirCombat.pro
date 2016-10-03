@@ -36,6 +36,7 @@ HEADERS  += \
     Shooter.hpp \
     Moveable.hpp \
     BasicEnemy.hpp \
-    Printable.hpp
+    Printable.hpp \
+    main.hpp
 
 FORMS    +=
