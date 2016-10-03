@@ -11,7 +11,7 @@ int AutoMove::getSpeed() const {
 void AutoMove::move() {
 
     //Before move
-    beforeMove();
+    if (!beforeMove()) return;
 
     //Move
     setPos(x(),y()+speed);

@@ -1,14 +1,11 @@
 #include "Bullet.hpp"
-#include "BasicEnemy.hpp"
-#include "Game.hpp"
-
-
 
 #include <QTimer>
-#include <QGraphicsScene>
 
+//Define the bullet's speed
+const int Bullet::Speed = -20;
 
-Bullet::Bullet() {
+Bullet::Bullet() : Projectile(Bullet::Speed) {
 
     //Set the size
     setRect(0,0,10,50);
@@ -21,38 +18,3 @@ Bullet::Bullet() {
     t->start(50);
 }
 
-//The bullet's move function
-void Bullet::move() {
-
-    //If bullet collides with enemy, destroy both
-    QList<QGraphicsItem *> items = collidingItems();
-    for(int i = 0; i < items.size(); i++)
-        if (typeid(*items[i]) == typeid(BasicEnemy)) {
-
-            //Increase the score
-            theGame->theScore->increase(1); //CHANGE
-
-            //remove them both
-            scene()->removeItem(items[i]);
-            scene()->removeItem(this);
-
-            //Prevent memory leaks
-            delete items[i];
-            delete this;
-
-            //Don't move becasue there was a collision
-            return;
-        }
-
-    //CHANGE - also check afterwards
-    //CHANGE - could be > 1 collision
-
-    //Move
-    setPos(x(),y()-20);
-
-    //If the bullet is off the screen, then delete it
-    if (pos().y() + this->rect().height() < 0) {
-        scene()->removeItem(this);
-        delete this;
-    }
-}

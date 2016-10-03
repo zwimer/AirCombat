@@ -8,7 +8,7 @@
 Enemy::Enemy(int s) : AutoMove(s) {}
 
 //Call before every move
-void Enemy::beforeMove() {}
+bool Enemy::beforeMove() { return true; }
 
 //Call after every move
 void Enemy::afterMove() {

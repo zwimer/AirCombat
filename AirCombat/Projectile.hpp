@@ -11,7 +11,7 @@ public:
 
 protected:
     void afterMove();
-    void beforeMove();
+    bool beforeMove();
 
 };
 

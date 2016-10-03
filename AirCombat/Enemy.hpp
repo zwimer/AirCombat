@@ -12,7 +12,7 @@ public:
 
 protected:
     void afterMove();
-    void beforeMove();
+    bool beforeMove();
 
 public slots:
     void move();

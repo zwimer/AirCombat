@@ -24,7 +24,9 @@ protected:
 
     //To be implemented by derived classes
     virtual void afterMove()=0;
-    virtual void beforeMove()=0;
+
+    //Returns false if the move should be skipped
+    virtual bool beforeMove()=0;
 
 private:
 

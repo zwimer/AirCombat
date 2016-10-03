@@ -9,12 +9,12 @@ Projectile::Projectile(int s) : AutoMove(s) {
 
 }
 
-void Projectile::afterMove() {
-    beforeMove();
-}
 
-//The projectile's move function
-void Projectile::beforeMove() {
+//The projectile's afterMove function
+void Projectile::afterMove() { beforeMove(); }
+
+//The projectile's beforeMove function
+bool Projectile::beforeMove() {
 
     //If projectile collides with enemy, destroy both
     QList<QGraphicsItem *> items = collidingItems();
@@ -35,8 +35,10 @@ void Projectile::beforeMove() {
             delete this;
 
             //Don't move becasue there was a collision
-            return;
+            return false;
         }
 
     //CHANGE - could be > 1 collision
+    //CHANGE comments
+    return true;
 }

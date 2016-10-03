@@ -6,14 +6,14 @@
 #include <QGraphicsRectItem>
 
 //Note: must first inheret from QObject, THEN from ...
-class Bullet : public QObject, public QGraphicsRectItem {
-    Q_OBJECT;
+class Bullet : public Projectile {
 public:
     Bullet();
 
-public slots:
-    void move();
+private:
 
+    //The bullet's speed
+    static const int Speed;
 };
 
 
