@@ -1,6 +1,0 @@
-<RCC>
-    <qresource prefix="/images">
-        <file>Player.png</file>
-        <file>Background.png</file>
-    </qresource>
-</RCC>
