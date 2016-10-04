@@ -48,5 +48,7 @@ Game::~Game() { delete theScore; delete P1; delete theScene; }
 
 //Create a new enemy and add it to the scene
 void Game::spawn() {
-    theScene->addItem(new BasicEnemy()); //CHANGE
+    Enemy* e = new BasicEnemy(); //CHANGE
+    e->spawn();
+    theScene->addItem(e);
 }

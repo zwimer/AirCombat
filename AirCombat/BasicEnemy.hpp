@@ -16,6 +16,12 @@ public:
     //The speed of basic enemy
     static const uint Speed;
 
+    //Return the enemy's size
+    inline uint getWidth() const;
+    inline uint getHeight() const;
+
+private:
+
     //Size of basic enemy
     static const uint Height;
     static const uint Width;

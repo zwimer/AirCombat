@@ -2,12 +2,10 @@
 #include "Health.hpp"
 #include "Game.hpp"
 
-#include <stdlib.h>
 #include <QGraphicsScene>
 
-
 //BasicEnemy's move speed
-const uint BasicEnemy::Speed = 10;
+const uint BasicEnemy::Speed = 4;
 
 //BasicEnemy's size
 const uint BasicEnemy::Height = 100;
@@ -17,11 +15,18 @@ const uint BasicEnemy::Width = 158; //100
 //Constructor
 BasicEnemy::BasicEnemy() : Enemy(getSpeed()) {
 
+    //Draw the enemy
     setPixmap(QPixmap(":/images/BasicEnemy.png"));
+}
 
-//CHANGE
-    //Randomize location
-    setPos(rand()%(Game::Width - BasicEnemy::Width), -(int)BasicEnemy::Height); //CHANGE
+//Return the enemy's width
+inline uint BasicEnemy::getWidth() const {
+    return BasicEnemy::Width;
+}
+
+//Return the enemy's height
+inline uint BasicEnemy::getHeight() const {
+    return BasicEnemy::Height;
 }
 
 //Returns speed

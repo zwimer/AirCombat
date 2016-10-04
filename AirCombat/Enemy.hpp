@@ -12,8 +12,14 @@ public:
     Enemy()=delete;
     Enemy(uint s);
 
-    //Virtual methods
+    //Pure virtual methods
     virtual inline uint getSpeed() const = 0;
+    virtual inline uint getWidth() const = 0;
+    virtual inline uint getHeight() const = 0;
+
+    //Set the enemy's initial position
+    //If you chose to do so, override this with caution
+    virtual void spawn();
 
 protected:
 

@@ -1,6 +1,8 @@
 #include "Enemy.hpp"
 #include "Game.hpp"
 
+#include <stdlib.h>
+
 #include <QTimer>
 #include <QGraphicsScene>
 
@@ -12,7 +14,14 @@ Enemy::Enemy(uint s) : AutoMove(s) {
     connect(t, SIGNAL(timeout()), this, SLOT(move()));
 
     //Have the timer call move every 50 ms
-    t->start(50);
+    t->start(20);
+}
+
+//Sets the enemy's position
+void Enemy::spawn() {
+
+    //Randomize location
+    setPos(rand()%(Game::Width - getWidth()), -(int)getHeight());
 }
 
 //Call before every move
