@@ -1,4 +1,5 @@
 #include "Enemy.hpp"
+#include "Player.hpp"
 #include "Game.hpp"
 
 #include <stdlib.h>

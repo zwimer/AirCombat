@@ -1,4 +1,6 @@
 #include "Game.hpp"
+#include "Score.hpp"
+#include "Player.hpp"
 #include "BasicEnemy.hpp"
 
 #include <QBrush>

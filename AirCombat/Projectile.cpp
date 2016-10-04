@@ -1,5 +1,6 @@
 #include "BasicEnemy.hpp"
 #include "Projectile.hpp"
+#include "Score.hpp"
 #include "Game.hpp"
 
 #include <QTimer>

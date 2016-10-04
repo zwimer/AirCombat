@@ -1,7 +1,6 @@
 #ifndef ENEMY_H
 #define ENEMY_H
 
-#include "Game.hpp"
 #include "AutoMove.hpp"
 
 //Note: must first inheret from QObject, THEN from ...

@@ -2,6 +2,7 @@
 #define HEALTH_H
 
 #include "main.hpp"
+
 #include <QGraphicsTextItem>
 
 class Health : public QGraphicsTextItem{

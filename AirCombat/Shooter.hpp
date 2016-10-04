@@ -1,9 +1,10 @@
 #ifndef SHOOTER_H
 #define SHOOTER_H
 
-#include "Projectile.hpp"
-
 #include <QGraphicsPixmapItem>
+
+//Forward declerations
+class Projectile;
 
 class Shooter : public QGraphicsPixmapItem {
 public:

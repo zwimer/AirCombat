@@ -36,7 +36,6 @@ HEADERS  += \
     Shooter.hpp \
     BasicEnemy.hpp \
     main.hpp \
-    AutoMove.hpp \
     AutoMove.hpp
 
 FORMS    +=

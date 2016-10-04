@@ -1,10 +1,12 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "Score.hpp"
-#include "Player.hpp"
-
 #include <QObject>
+#include <QGraphicsScene>
+
+//Forward declerations
+class Score;
+class Player;
 
 class Game : public QObject {
     Q_OBJECT;

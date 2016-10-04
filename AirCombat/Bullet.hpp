@@ -1,8 +1,10 @@
 #ifndef BULLET_H
 #define BULLET_H
 
-#include "Shooter.hpp"
 #include "Projectile.hpp"
+
+//Forward declerations
+class Shooter;
 
 //Note: must first inheret from QObject, THEN from ...
 class Bullet : public Projectile {

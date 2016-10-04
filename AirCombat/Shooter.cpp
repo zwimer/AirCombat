@@ -1,4 +1,5 @@
 #include "Shooter.hpp"
+#include "Projectile.hpp"
 #include "Game.hpp"
 
 //Consturctor
