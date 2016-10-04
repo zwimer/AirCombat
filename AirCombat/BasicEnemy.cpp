@@ -23,7 +23,7 @@ BasicEnemy::BasicEnemy() : Enemy(getSpeed()) {
 
 //CHANGE
     //Randomize location
-    setPos(rand()%(Game::Width - BasicEnemy::Width), 0); //CHANGE
+    setPos(rand()%(Game::Width - BasicEnemy::Width), -(int)BasicEnemy::Height); //CHANGE
 }
 
 //Returns speed

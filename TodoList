@@ -1,9 +1,7 @@
-Global time constant
-Allow multiple keys hit at once
-Bullet timer
-Game
-
+Global time constant for appropriate abstract classes
 Folders/and move resource files if applicable there too
+Change BasicEnemy's constructor
+
 
 First:
 	Create a game where you can shoot at incoming enemies as a plane
@@ -11,6 +9,7 @@ First:
 
 Second:
 	Create read me
+	Allow multiple keys hit at once (if possible)
 
 Third:
 	After basic functionality is added. Add the following:
