@@ -5,7 +5,7 @@
 #include <QTimer>
 #include <QGraphicsScene>
 #include <QgraphicsView>
-#include <QGraphicsRectItem>
+#include <QMediaPlayer>
 
 //The Game's size
 const uint Game::Height = 600;
@@ -38,6 +38,11 @@ Game::Game() {
     QTimer *t = new QTimer();
     QObject::connect(t, SIGNAL(timeout()), this, SLOT(spawn()));
     t->start(2000);
+
+    //Play background music
+    QMediaPlayer *theMusic = new QMediaPlayer();
+    theMusic->setMedia(QUrl("qrc:/sounds/Background.mp3"));
+    theMusic->play();
 
 	//Make the scene visible
 	theWindow->show();

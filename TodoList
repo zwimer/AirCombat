@@ -1,11 +1,10 @@
 Global time constant for appropriate abstract classes
 Folders/and move resource files if applicable there too
 Change BasicEnemy's constructor
-
+Auto Turrets
 
 First:
 	Create a game where you can shoot at incoming enemies as a plane
-	Add graphics and sound
 
 Second:
 	Create read me

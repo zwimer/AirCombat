@@ -5,4 +5,7 @@
         <file>Bullet.png</file>
         <file>BasicEnemy.png</file>
     </qresource>
+    <qresource prefix="/sounds">
+        <file>Background.mp3</file>
+    </qresource>
 </RCC>
