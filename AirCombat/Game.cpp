@@ -21,7 +21,7 @@ Game::Game() {
     theScene->setSceneRect(0,0,Width,Height);
 
     //Create the background
-    theScene->setBackgroundBrush(QBrush(QImage(":/images/Background")));
+    theScene->setBackgroundBrush(QBrush(QImage(":/images/images/Background")));
 
 	//Create and setup the window
 	QGraphicsView *theWindow = new QGraphicsView(theScene);
@@ -43,7 +43,7 @@ Game::Game() {
 
     //Play background music
     QMediaPlayer *theMusic = new QMediaPlayer();
-    theMusic->setMedia(QUrl("qrc:/sounds/Background.mp3"));
+    theMusic->setMedia(QUrl("qrc:/sounds/sounds/Background.mp3"));
     theMusic->play();
 
 	//Make the scene visible

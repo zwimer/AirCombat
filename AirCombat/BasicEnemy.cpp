@@ -16,7 +16,7 @@ const uint BasicEnemy::Width = 158; //100
 BasicEnemy::BasicEnemy() : Enemy(getSpeed()) {
 
     //Draw the enemy
-    setPixmap(QPixmap(":/images/BasicEnemy.png"));
+    setPixmap(QPixmap(":/images/images/BasicEnemy.png"));
 }
 
 //Return the enemy's width

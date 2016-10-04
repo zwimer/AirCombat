@@ -26,7 +26,7 @@ Player::Player(QGraphicsView *theWindow) : Shooter(this) {
     theWindow->scene()->addItem(health);
 
     //Set the player's size and location
-    setPixmap(QPixmap(":/images/Player.png"));
+    setPixmap(QPixmap(":/images/images/Player.png"));
     setPos(theWindow->width()/2, theWindow->height() - pixelHeight);
 
     //Add the player to the scene

@@ -14,7 +14,7 @@ const int Bullet::pixelHeight = 40;
 Bullet::Bullet() : Projectile(Bullet::Speed) {
 
     //Draw the bullet
-    setPixmap(QPixmap(":/images/Bullet.png"));
+    setPixmap(QPixmap(":/images/images/Bullet.png"));
 }
 
 //Set the bullet's position
