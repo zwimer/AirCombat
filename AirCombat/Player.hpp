@@ -20,13 +20,20 @@ public:
     //Allows the player to move
     void keyPressEvent(QKeyEvent *e);
 
-    //The Player's health
+    //Returns the width of the player
+    uint getWidth() const;
+
+    //Representation
     Health *health;
 
 private:
 
     //Default health
     static const int DefaultHealth;
+
+    //Size
+    static const int pixelWidth;
+    static const int pixelHeight;
 };
 
 #endif

@@ -2,16 +2,15 @@
 #include "Game.hpp"
 
 //Consturctor
-Shooter::Shooter() {}
+Shooter::Shooter(Shooter* o) {
+    Owner = o;
+}
 
-//Destructor
-Shooter::~Shooter() {}
-
-//Fire
+//Fire a projectile
 void Shooter::fire(Projectile *p) {
 
     //Set the location of the projectile
-    p->setPos(x(),y());
+    p->setPosition(Owner);
 
     //Add the bullet to the scene
     theGame->theScene->addItem(p);

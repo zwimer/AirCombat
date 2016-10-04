@@ -3,22 +3,25 @@
 
 #include "Projectile.hpp"
 
-//#include <QGraphicsRectItem>
+#include <QGraphicsPixmapItem>
 
-class Shooter : public QGraphicsRectItem {
+class Shooter : public QGraphicsPixmapItem {
 public:
 
     //Constructor
-    Shooter();
-
-    //Make class abstract
-    virtual ~Shooter()=0;
+    Shooter()=delete;
+    Shooter(Shooter* o);
 
     //Fire
     void fire(Projectile *p);
 
+    //This is for the use of the projectile class
+    virtual uint getWidth() const = 0;
+
 private:
 
+    //Who shot
+    Shooter* Owner;
 };
 
 #endif // SHOOTER_H

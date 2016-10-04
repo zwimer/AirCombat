@@ -41,4 +41,4 @@ HEADERS  += \
 FORMS    +=
 
 RESOURCES += \
-    PlayerRes.qrc
+    ResFile.qrc

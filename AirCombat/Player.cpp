@@ -9,13 +9,15 @@
 //Set player's default health
 const int Player::DefaultHealth = 3;
 
+//Set player's size
+const int Player::pixelWidth = 128;
+const int Player::pixelHeight = 104;
+
 //Constructor
-Player::Player(QGraphicsView *theWindow) {
+Player::Player(QGraphicsView *theWindow) : Shooter(this) {
 
-    //Make this player focusable
+    //Focus the player
     this->setFlag(QGraphicsItem::ItemIsFocusable);
-
-    //Make this the focus item
     this->setFocus();
 
     //Make the Player's health
@@ -24,8 +26,8 @@ Player::Player(QGraphicsView *theWindow) {
     theWindow->scene()->addItem(health);
 
     //Set the player's size and location
-    setRect(0,0,100,100);   //CHANGE, move into player
-    setPos(theWindow->width()/2, theWindow->height() - rect().height());
+    setPixmap(QPixmap(":/images/Player.png"));
+    setPos(theWindow->width()/2, theWindow->height() - pixelHeight);
 
     //Add the player to the scene
     theWindow->scene()->addItem(this);
@@ -33,6 +35,11 @@ Player::Player(QGraphicsView *theWindow) {
 
 //Destructor
 Player::~Player() { delete health; }
+
+//Returns the player's width
+uint Player::getWidth() const {
+    return Player::pixelWidth;
+}
 
 //If a button was pressed
 void Player::keyPressEvent(QKeyEvent *e) {
@@ -50,5 +57,5 @@ void Player::keyPressEvent(QKeyEvent *e) {
     }
 
     //Shoot
-    else if (e->key() == Qt::Key_Space) { fire(new Bullet()); }
+    else if (e->key() == Qt::Key_Space) { fire(new Bullet()); } //CHANGE
 }

@@ -3,6 +3,10 @@
 
 #include "AutoMove.hpp"
 
+//Forward declarations
+class Shooter;
+
+//A class for projectiles
 class Projectile: public AutoMove {
 public:
 
@@ -11,13 +15,14 @@ public:
     Projectile()=delete;
     Projectile(uint s);
 
-    //Make class abstract
-    virtual ~Projectile()=0;
+    //Set's the position
+    virtual void setPosition(Shooter* Owner) = 0;
 
 protected:
+
+    //Functions to be called when the bullet moves
     void afterMove();
     bool beforeMove();
-
 };
 
 #endif // PROJECTILE_H

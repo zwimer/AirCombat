@@ -1,6 +1,7 @@
 #include "Game.hpp"
 #include "BasicEnemy.hpp"
 
+#include <QBrush>
 #include <QTimer>
 #include <QGraphicsScene>
 #include <QgraphicsView>
@@ -17,12 +18,15 @@ Game::Game() {
     theScene = new QGraphicsScene();
     theScene->setSceneRect(0,0,Width,Height);
 
+    //Create the background
+    theScene->setBackgroundBrush(QBrush(QImage(":/images/Background")));
+
 	//Create and setup the window
 	QGraphicsView *theWindow = new QGraphicsView(theScene);
 	theWindow->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 	theWindow->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     theWindow->setFixedSize(Width,Height);
-	
+
 	//Create a player, and center him
     P1 = new Player(theWindow);
 

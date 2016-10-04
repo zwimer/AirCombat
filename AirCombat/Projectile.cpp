@@ -16,9 +16,6 @@ Projectile::Projectile(uint s) : AutoMove(-(int)s) {
     t->start(50);
 }
 
-//Destructor
-Projectile::~Projectile() {}
-
 //The projectile's afterMove function
 void Projectile::afterMove() { beforeMove(); }
 

@@ -11,15 +11,13 @@ const uint BasicEnemy::Speed = 10;
 
 //BasicEnemy's size
 const uint BasicEnemy::Height = 100;
-const uint BasicEnemy::Width = 100;
+const uint BasicEnemy::Width = 158; //100
 
 
 //Constructor
 BasicEnemy::BasicEnemy() : Enemy(getSpeed()) {
 
-    //Set the size
-    setRect(0,0,100,100);
-
+    setPixmap(QPixmap(":/images/BasicEnemy.png"));
 
 //CHANGE
     //Randomize location
