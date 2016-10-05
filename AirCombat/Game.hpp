@@ -7,6 +7,7 @@
 //Forward declerations
 class Score;
 class Player;
+class QMediaPlayer;
 
 class Game : public QObject {
     Q_OBJECT;
@@ -31,6 +32,14 @@ public slots:
 
     //Spawn enemies
     void spawn();
+
+    //Loop music
+    void restartMusic();
+
+private:
+
+    //Music
+    QMediaPlayer *theMusic;
 };
 
 //Global variable

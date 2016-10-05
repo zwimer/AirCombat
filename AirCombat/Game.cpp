@@ -42,9 +42,13 @@ Game::Game() {
     t->start(2000);
 
     //Play background music
-    QMediaPlayer *theMusic = new QMediaPlayer();
+    theMusic = new QMediaPlayer();
     theMusic->setMedia(QUrl("qrc:/sounds/sounds/Background.mp3"));
     theMusic->play();
+
+    //Loop the music
+    QObject::connect(theMusic, SIGNAL(stateChanged(QMediaPlayer::State)),
+                     this, SLOT(restartMusic()));
 
 	//Make the scene visible
 	theWindow->show();
@@ -58,4 +62,10 @@ void Game::spawn() {
     Enemy* e = new BasicEnemy(); //CHANGE
     e->spawn();
     theScene->addItem(e);
+}
+
+//If the music finishes, restart it
+void Game::restartMusic() {
+    if (theMusic->state() == QMediaPlayer::StoppedState)
+        theMusic->play();
 }
