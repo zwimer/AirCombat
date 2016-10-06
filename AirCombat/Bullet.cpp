@@ -2,6 +2,7 @@
 #include "Shooter.hpp"
 
 #include <QTimer>
+#include <SoundManager.hpp>
 
 //Define the bullet's speed
 const uint Bullet::Speed = 20;
@@ -15,6 +16,9 @@ Bullet::Bullet() : Projectile(Bullet::Speed) {
 
     //Draw the bullet
     setPixmap(QPixmap(":/images/images/Bullet.png"));
+
+    //Play the bullet sound
+    SoundManager::newSound("qrc:/sounds/sounds/Bullet.mp3");
 }
 
 //Set the bullet's position

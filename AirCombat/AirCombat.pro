@@ -23,7 +23,10 @@ SOURCES += main.cpp \
     Projectile.cpp \
     Shooter.cpp \
     BasicEnemy.cpp \
-    AutoMove.cpp
+    AutoMove.cpp \
+    WindowManager.cpp \
+    Sound.cpp \
+    SoundManager.cpp
 
 HEADERS  += \
     Bullet.hpp \
@@ -36,7 +39,10 @@ HEADERS  += \
     Shooter.hpp \
     BasicEnemy.hpp \
     main.hpp \
-    AutoMove.hpp
+    AutoMove.hpp \
+    WindowManager.hpp \
+    Sound.hpp \
+    SoundManager.hpp
 
 FORMS    +=
 

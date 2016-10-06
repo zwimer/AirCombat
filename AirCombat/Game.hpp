@@ -10,7 +10,7 @@ class Player;
 class QMediaPlayer;
 
 class Game : public QObject {
-    Q_OBJECT;
+    Q_OBJECT
 public:
 
     //Constructor

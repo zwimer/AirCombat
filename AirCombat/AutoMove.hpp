@@ -5,7 +5,7 @@
 #include <QGraphicsPixmapItem>
 
 class AutoMove : public QObject, public QGraphicsPixmapItem {
-    Q_OBJECT;
+    Q_OBJECT
 public:
 
     //Constructor
