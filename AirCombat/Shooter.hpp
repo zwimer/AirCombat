@@ -1,6 +1,7 @@
 #ifndef SHOOTER_H
 #define SHOOTER_H
 
+#include "main.hpp"
 #include <QGraphicsPixmapItem>
 
 //Forward declerations
@@ -10,16 +11,20 @@ class Shooter : public QGraphicsPixmapItem {
 public:
 
     //Constructor
-    Shooter()=delete;
-    Shooter(Shooter* o);
+    Shooter();
 
     //Fire
-    void fire(Projectile *p);
+    void fire(Projectile *p, Shooter *Turret = NULL);
 
-    //This is for the use of the projectile class
+
+    virtual int getX() const;
+    virtual int getY() const;
+
+    //Get the size of the owner
     virtual uint getWidth() const = 0;
+    virtual uint getHeight() const = 0;
 
-private:
+protected:
 
     //Who shot
     Shooter* Owner;

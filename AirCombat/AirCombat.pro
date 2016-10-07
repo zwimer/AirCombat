@@ -26,7 +26,8 @@ SOURCES += main.cpp \
     AutoMove.cpp \
     WindowManager.cpp \
     Sound.cpp \
-    SoundManager.cpp
+    SoundManager.cpp \
+    Turret.cpp
 
 HEADERS  += \
     Bullet.hpp \
@@ -42,7 +43,8 @@ HEADERS  += \
     AutoMove.hpp \
     WindowManager.hpp \
     Sound.hpp \
-    SoundManager.hpp
+    SoundManager.hpp \
+    Turret.hpp
 
 FORMS    +=
 

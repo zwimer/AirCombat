@@ -5,6 +5,10 @@
 
 #include <Sound.hpp>
 
+
+//Templated                     CHANGE
+//#include "Turret.cpp"
+
 //Must make the game global
 Game * theGame;
 

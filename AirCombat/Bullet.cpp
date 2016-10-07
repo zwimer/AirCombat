@@ -21,7 +21,14 @@ Bullet::Bullet() : Projectile(Bullet::Speed) {
     SoundManager::newSound("qrc:/sounds/sounds/Bullet.mp3");
 }
 
+#include <QDebug>
 //Set the bullet's position
 void Bullet::setPosition(Shooter* Owner) {
-    setPos(Owner->x()+Owner->getWidth()/2-pixelWidth/2,Owner->y());
+    setPos(Owner->getX()+Owner->getWidth()/2-pixelWidth/2,Owner->getY());
+
+    qDebug() << "X = " << Owner->getX() << "+" << Owner->getWidth()/2 << "-" << pixelWidth/2;
+    qDebug() << "X: " << Owner->x()+Owner->getWidth()/2;
+    qDebug() << Owner->getY();
+
+
 }

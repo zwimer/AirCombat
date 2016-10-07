@@ -14,7 +14,7 @@ const int Player::pixelWidth = 128;
 const int Player::pixelHeight = 104;
 
 //Constructor
-Player::Player(QGraphicsView *theWindow) : Shooter(this) {
+Player::Player(QGraphicsView *theWindow) {
 
     //Focus the player
     this->setFlag(QGraphicsItem::ItemIsFocusable);
@@ -31,15 +31,20 @@ Player::Player(QGraphicsView *theWindow) : Shooter(this) {
 
     //Add the player to the scene
     theWindow->scene()->addItem(this);
+
+
+
+    //CHANGE
+    t = new Turret(this, Player::pixelWidth/4, Player::pixelHeight/2, 1000);
+
 }
 
 //Destructor
 Player::~Player() { delete health; }
 
-//Returns the player's width
-uint Player::getWidth() const {
-    return Player::pixelWidth;
-}
+//Returns the player's size
+uint Player::getWidth() const { return Player::pixelWidth; }
+uint Player::getHeight() const { return Player::pixelHeight; }
 
 //If a button was pressed
 void Player::keyPressEvent(QKeyEvent *e) {
