@@ -1,5 +1,5 @@
-#ifndef BULLET_H
-#define BULLET_H
+#ifndef MISSLE_H
+#define MISSLE_H
 
 #include "Projectile.hpp"
 
@@ -7,26 +7,26 @@
 class Shooter;
 
 //Note: must first inheret from QObject, THEN from ...
-class Bullet : public Projectile {
+class Missle : public Projectile {
 public:
 
     //Constructor
-    Bullet();
+    Missle();
 
-    //Get the bullet's height
+    //Get the Missle's height
     int getHeight() const;
 
-    //Set Bullet's starting position
+    //Set Missle's starting position
     void setPosition(Shooter *Owner);
 
 private:
 
-    //The bullet's speed
+    //The Missle's speed
     static const uint Speed;
 
-    //The bullet's size
+    //The Missle's size
     static const int pixelWidth;
     static const int pixelHeight;
 };
 
-#endif
+#endif // MISSLE_H

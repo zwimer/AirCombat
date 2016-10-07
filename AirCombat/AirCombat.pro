@@ -26,7 +26,8 @@ SOURCES += main.cpp \
     AutoMove.cpp \
     Sound.cpp \
     SoundManager.cpp \
-    Turret.cpp
+    Turret.cpp \
+    Missle.cpp
 
 HEADERS  += \
     Bullet.hpp \
@@ -42,7 +43,8 @@ HEADERS  += \
     AutoMove.hpp \
     Sound.hpp \
     SoundManager.hpp \
-    Turret.hpp
+    Turret.hpp \
+    Missle.hpp
 
 FORMS    +=
 

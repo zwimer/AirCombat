@@ -1,8 +1,9 @@
 #include "Turret.hpp"
-#include "Bullet.hpp"
+#include "Missle.hpp"
 
 //Constructor
-Turret::Turret(Shooter* o, int x, int y, uint t) : offsetX(x), offsetY(y) {
+Turret::Turret(Shooter* o, int x, int y, uint t)
+    : offsetX(x), offsetY(y) {
 
     //What the turret is on
     Owner = o;
@@ -10,7 +11,7 @@ Turret::Turret(Shooter* o, int x, int y, uint t) : offsetX(x), offsetY(y) {
     //Create a timer
     timer = new QTimer();
 
-    //
+    //Connect the timer to the shoot function
     QObject::connect(timer, SIGNAL(timeout()), this, SLOT(shoot()));
 
     //Start the timer if t != 0
@@ -44,4 +45,4 @@ uint Turret::getWidth() const { return 0; }
 uint Turret::getHeight() const { return 0; }
 
 //Fire the turret
-void Turret::shoot() { fire(new Bullet(), this); }
+void Turret::shoot() { fire(new Missle(), this); }

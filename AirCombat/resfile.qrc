@@ -4,9 +4,11 @@
         <file>images/BasicEnemy.png</file>
         <file>images/Bullet.png</file>
         <file>images/Player.png</file>
+        <file>images/Missle.png</file>
     </qresource>
     <qresource prefix="/sounds">
         <file>sounds/Background.mp3</file>
         <file>sounds/Bullet.mp3</file>
+        <file>sounds/Missle.mp3</file>
     </qresource>
 </RCC>
