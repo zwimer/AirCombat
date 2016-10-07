@@ -6,6 +6,8 @@
 #include <QTimer>
 #include <QGraphicsScene>
 
+#include <vector>
+
 //Constructor
 Projectile::Projectile(uint s) : AutoMove(-(int)s) {
 
@@ -23,18 +25,21 @@ void Projectile::afterMove() { beforeMove(); }
 //The projectile's beforeMove function
 bool Projectile::beforeMove() {
 
+    //A vector of items to delete
+    std::vector<QGraphicsItem*> toDelete;
+
     //If projectile collides with enemy, destroy both
-    QList<QGraphicsItem *> items = collidingItems();
+    QList<QGraphicsItem*> items = collidingItems();
     for(int i = 0; i < items.size(); i++)
 
         //If the projectile hits an enemy
-        if (dynamic_cast<const BasicEnemy *>(items[i]) != NULL) {
+        if (dynamic_cast<const Enemy *>(items[i]) != NULL) {
 
             //Increase the score
             theGame->theScore->increase(1); //CHANGE
 
             //Remove them both
-            scene()->removeItem(items[i]);
+            toDelete.push_back(items[i]);
             scene()->removeItem(this);
 
             //Prevent memory leaks
@@ -45,6 +50,13 @@ bool Projectile::beforeMove() {
             return false;
         }
 
-    //Move, no collision
-    return true;
+    //If no collision, return true
+    if (!toDelete.size()) return true;
+
+    //Delete all the colliding items
+    for(int i = 0; i < (int)toDelete.size(); i++)
+        scene()->removeItem(toDelete[i]);
+
+    //There was a collision
+    return false;
 }

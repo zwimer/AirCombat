@@ -7,6 +7,8 @@
 #include <QTimer>
 #include <QGraphicsScene>
 
+#include "BasicEnemy.hpp"    //DELETE
+
 //Constructor
 Enemy::Enemy(uint s) : AutoMove(s) {
 
@@ -18,11 +20,23 @@ Enemy::Enemy(uint s) : AutoMove(s) {
     t->start(20);
 }
 
-//Sets the enemy's position
-void Enemy::spawn() {
+//Override the enemy's spawn location if need be
+void Enemy::spawn() {}
+
+//Called by game to spawn an enemy
+Enemy* Enemy::spawnEnemy() {
+
+    //Create a new enemy
+    Enemy *e = new BasicEnemy();    //CHANGE
 
     //Randomize location
-    setPos(rand()%(Game::Width - getWidth()), -(int)getHeight());
+    e->setPos(rand()%(Game::Width - e->getWidth()), -(int)e->getHeight());
+
+    //Possibly override random location
+    e->spawn();
+
+    //Return the new enemy
+    return e;
 }
 
 //Call before every move

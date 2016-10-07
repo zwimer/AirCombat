@@ -65,11 +65,7 @@ void Game::GameOver() {
 }
 
 //Create a new enemy and add it to the scene
-void Game::spawn() {
-    Enemy* e = new BasicEnemy(); //CHANGE
-    e->spawn();
-    theScene->addItem(e);
-}
+void Game::spawn() { theScene->addItem(Enemy::spawnEnemy()); }
 
 //If the music finishes, restart it
 void Game::restartMusic() {

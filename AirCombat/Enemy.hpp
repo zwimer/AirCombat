@@ -16,9 +16,13 @@ public:
     virtual inline uint getWidth() const = 0;
     virtual inline uint getHeight() const = 0;
 
-    //Set the enemy's initial position
+    //Override the enemy's initial position
     //If you chose to do so, override this with caution
+    //Otherwise, do not implement this function!
     virtual void spawn();
+
+    //Called by the game to spawn an enemy
+    static Enemy* spawnEnemy();
 
 protected:
 
