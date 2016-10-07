@@ -17,14 +17,14 @@ private:
     //A play function
     void play();
 
-    //Allow SoundManager to make sounds
-    friend void SoundManager::newSound(const char* n);
-
     //Representation
     QMediaPlayer *p;
 
-public slots:
-    //private:
+    //Allow SoundManager to make sounds
+    friend void SoundManager::newSound(const char* n);
+
+private slots:
+
     //Finish playing
     void Finish();
 };

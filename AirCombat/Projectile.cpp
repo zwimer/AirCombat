@@ -33,7 +33,7 @@ bool Projectile::beforeMove() {
             //Increase the score
             theGame->theScore->increase(1); //CHANGE
 
-            //remove them both
+            //Remove them both
             scene()->removeItem(items[i]);
             scene()->removeItem(this);
 
@@ -45,7 +45,6 @@ bool Projectile::beforeMove() {
             return false;
         }
 
-    //CHANGE - could be > 1 collision
-    //CHANGE comments
+    //Move, no collision
     return true;
 }

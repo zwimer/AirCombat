@@ -24,7 +24,6 @@ SOURCES += main.cpp \
     Shooter.cpp \
     BasicEnemy.cpp \
     AutoMove.cpp \
-    WindowManager.cpp \
     Sound.cpp \
     SoundManager.cpp \
     Turret.cpp
@@ -41,7 +40,6 @@ HEADERS  += \
     BasicEnemy.hpp \
     main.hpp \
     AutoMove.hpp \
-    WindowManager.hpp \
     Sound.hpp \
     SoundManager.hpp \
     Turret.hpp

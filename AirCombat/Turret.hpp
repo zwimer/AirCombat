@@ -6,13 +6,11 @@
 #include "Projectile.hpp"
 
 #include <QObject>
-
+#include <QTimer>
 
 //A turret class that shoots T
-
 class Turret : public QObject, public Shooter {
     Q_OBJECT
-
 public:
 
     //Constructors
@@ -22,64 +20,30 @@ public:
     //Set fire rate
     void setFireRate(uint t);
 
+    //Returns the location of the turret
     int getX() const;
     int getY() const;
 
+    //Returns the size of the turret
     uint getWidth() const;
     uint getHeight() const;
 
 public slots:
 
+    //Shoots
     void shoot();
 
 private:
 
-    uint fireRate;
+    //What the turret is on
     Shooter *Owner;
 
+    //To keep track of when the turret should shoot
+    QTimer *timer;
+
+    //The turret's location on Owner
     const int offsetX, offsetY;
 
 };
 
-
-#if 0
-//A turret class that shoots T
-template <class T>
-class Turret : public QObject, public Shooter {
-
-    //Make sure T is a projectile
-    static_assert(std::is_base_of<Projectile, T>::value,
-                  "T must be a projectile");
-
-    Q_OBJECT
-
-public:
-
-    //Constructors
-    Turret()=delete;
-    Turret(Shooter* o, int x, int y, uint t = 0);
-
-    //Set fire rate
-    void setFireRate(uint t);
-
-    uint x() const;
-    uint y() const;
-    uint getWidth() const;
-    uint getHeight() const;
-
-public slots:
-
-    void fire();
-
-private:
-
-    uint fireRate;
-    Shooter *Owner;
-
-    const int offsetX, offsetY;
-
-};
-
-//CHANGE
-#endif
 #endif // TURRET_H

@@ -57,6 +57,13 @@ Game::Game() {
 //Destructor
 Game::~Game() { delete theScore; delete P1; delete theScene; }
 
+//GameOver
+#include <QDebug>
+void Game::GameOver() {
+    qDebug() << "GAME OVER: Still needs to be implemented";
+
+}
+
 //Create a new enemy and add it to the scene
 void Game::spawn() {
     Enemy* e = new BasicEnemy(); //CHANGE

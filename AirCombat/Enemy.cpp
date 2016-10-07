@@ -26,7 +26,17 @@ void Enemy::spawn() {
 }
 
 //Call before every move
-bool Enemy::beforeMove() { return true; }
+bool Enemy::beforeMove() {
+
+    //If the enemy collides with the player, game over
+    QList<QGraphicsItem *> items = collidingItems();
+    for(int i = 0; i < items.size(); i++)
+        if (dynamic_cast<const Player *>(items[i]) != NULL)
+            theGame->GameOver();
+
+    //To satisfy the compiler
+    return true;
+}
 
 //Call after every move
 void Enemy::afterMove() {

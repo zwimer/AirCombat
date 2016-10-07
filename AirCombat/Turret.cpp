@@ -1,56 +1,47 @@
 #include "Turret.hpp"
 #include "Bullet.hpp"
 
-#include <QTimer>
-
-#if 1
+//Constructor
 Turret::Turret(Shooter* o, int x, int y, uint t) : offsetX(x), offsetY(y) {
 
-    fireRate = t;
+    //What the turret is on
     Owner = o;
 
-    QTimer *timer = new QTimer();
-    QObject::connect(timer, SIGNAL(timeout()),
-                     this, SLOT(shoot()));
-    if (t) timer->start(t);
+    //Create a timer
+    timer = new QTimer();
 
+    //
+    QObject::connect(timer, SIGNAL(timeout()), this, SLOT(shoot()));
+
+    //Start the timer if t != 0
+    //Otherwise, note that t = 0
+    if (t) timer->start(t);
+    else timer->setInterval(0);
 }
 
 //Set fire rate
-void Turret::setFireRate(uint t) { fireRate = t; }
+void Turret::setFireRate(uint t) {
 
+    //If t == 0, stop and note that t = 0
+    if (!t) {
+        timer->stop();
+        timer->setInterval(0);
+    }
+
+    //If the timer is already running, change the interval
+    else if (timer->interval()) timer->setInterval(t);
+
+    //Otherwise, start the timer
+    else timer->start(t);
+}
+
+//Return the turret's location
 int Turret::getX() const { return Owner->x()+offsetX; }
 int Turret::getY() const { return Owner->y()+offsetY; }
 
-uint Turret::getWidth() const { return 0; } //CHANGE
+//Turrets have no size... at least not yet
+uint Turret::getWidth() const { return 0; }
 uint Turret::getHeight() const { return 0; }
 
-#include <QDebug>
-void Turret::shoot() {
-    qDebug() << "I WAS CALLED!!!";
-    fire(new Bullet(), this);
-}
-#endif
-#if 0
-template<class T>
-Turret<T>::Turret(Shooter* o, int x, int y, uint t) : offsetX(x), offsetY(y) {
-
-
-    fireRate = t;
-    Owner = o;
-
-}
-
-//Set fire rate
-template<class T> void Turret<T>::setFireRate(uint t) { fireRate = t; }
-
-template<class T> uint Turret<T>::x() const { return Owner->x()+offsetX; }
-template<class T> uint Turret<T>::y() const { return Owner->y()+offsetY; }
-
-template<class T> uint Turret<T>::getWidth() const { return 0; } //CHANGE
-template<class T> uint Turret<T>::getHeight() const { return 0; }
-
-template<class T> void Turret<T>::fire() {
-
-}
-#endif
+//Fire the turret
+void Turret::shoot() { fire(new Bullet(), this); }

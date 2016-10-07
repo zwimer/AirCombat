@@ -19,6 +19,9 @@ public:
     //Destructor
     ~Game();
 
+    //Game over
+    void GameOver();
+
     //Representation
     Player *P1;
     Score *theScore;

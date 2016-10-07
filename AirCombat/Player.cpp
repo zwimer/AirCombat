@@ -32,11 +32,9 @@ Player::Player(QGraphicsView *theWindow) {
     //Add the player to the scene
     theWindow->scene()->addItem(this);
 
-
-
-    //CHANGE
-    t = new Turret(this, Player::pixelWidth/4, Player::pixelHeight/2, 1000);
-
+    //Make wing turrets
+    WingTurretL = new Turret(this, Player::pixelWidth/4, Player::pixelHeight/2, 3000);
+    WingTurretR = new Turret(this, 3*Player::pixelWidth/4, Player::pixelHeight/2, 3000);
 }
 
 //Destructor

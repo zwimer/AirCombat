@@ -29,12 +29,9 @@ public:
     uint getWidth() const;
     uint getHeight() const;
 
-
-    //CHANGE
-        Turret * t;
-    //    Turret<Bullet> * t;
-
-    //CHANGE
+    //Wing turrets
+    Turret *WingTurretL;
+    Turret *WingTurretR;
 
     //Representation
     Health *health;
