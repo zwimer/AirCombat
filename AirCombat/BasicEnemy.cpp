@@ -5,7 +5,7 @@
 #include <QGraphicsScene>
 
 //BasicEnemy's move speed
-const uint BasicEnemy::Speed = 4;
+const uint BasicEnemy::Speed = 5;
 
 //BasicEnemy's size
 const uint BasicEnemy::Height = 100;

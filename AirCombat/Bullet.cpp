@@ -5,7 +5,7 @@
 #include <SoundManager.hpp>
 
 //Define the bullet's speed
-const uint Bullet::Speed = 20;
+const uint Bullet::Speed = 10;
 
 //Define the bullet's size
 const int Bullet::pixelWidth = 6;

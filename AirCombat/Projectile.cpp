@@ -9,15 +9,7 @@
 #include <vector>
 
 //Constructor
-Projectile::Projectile(uint s) : AutoMove(-(int)s) {
-
-    //Connect the move function to a timer
-    QTimer *t = new QTimer();
-    connect(t, SIGNAL(timeout()), this, SLOT(move()));
-
-    //Have the timer call move every 50 ms
-    t->start(50);
-}
+Projectile::Projectile(uint s) : AutoMove(-(int)s) {}
 
 //The projectile's afterMove function
 void Projectile::afterMove() { beforeMove(); }

@@ -10,15 +10,7 @@
 #include "BasicEnemy.hpp"    //DELETE
 
 //Constructor
-Enemy::Enemy(uint s) : AutoMove(s) {
-
-    //Connect the move function to a timer
-    QTimer *t = new QTimer();
-    connect(t, SIGNAL(timeout()), this, SLOT(move()));
-
-    //Have the timer call move every 50 ms
-    t->start(20);
-}
+Enemy::Enemy(uint s) : AutoMove(s) {}
 
 //Override the enemy's spawn location if need be
 void Enemy::spawn() {}
