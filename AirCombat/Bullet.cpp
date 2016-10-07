@@ -21,6 +21,9 @@ Bullet::Bullet() : Projectile(Bullet::Speed) {
     SoundManager::newSound("qrc:/sounds/sounds/Bullet.mp3");
 }
 
+//Return the height of the bullet
+int Bullet::getHeight() const { return pixelHeight; }
+
 //Set the bullet's position
 void Bullet::setPosition(Shooter* Owner) {
     setPos(Owner->getX()+Owner->getWidth()/2-pixelWidth/2,Owner->getY());

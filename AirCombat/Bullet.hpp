@@ -13,6 +13,9 @@ public:
     //Constructor
     Bullet();
 
+    //Get the bullet's height
+    int getHeight() const;
+
     //Set Bullet's starting position
     void setPosition(Shooter *Owner);
 

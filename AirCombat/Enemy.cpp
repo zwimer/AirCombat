@@ -23,7 +23,7 @@ Enemy* Enemy::spawnEnemy() {
     Enemy *e = new BasicEnemy();    //CHANGE
 
     //Randomize location
-    e->setPos(rand()%(Game::Width - e->getWidth()), -(int)e->getHeight());
+    e->setPos(rand()%(Game::Width - e->getWidth()), 0*-(int)e->getHeight());
 
     //Possibly override random location
     e->spawn();
@@ -49,24 +49,22 @@ bool Enemy::checkDeath() {
             //Increase the score
             theGame->theScore->increase(1); //CHANGE
 
-            //Remove them both
+            //Note that this projectile should be deleted
             toDelete.push_back(items[i]);
-            scene()->removeItem(this);
-
-            //Prevent memory leaks
-            delete items[i];
-            delete this;
-
-            //Don't move becasue there was a collision
-            return false;
         }
 
     //If no collision, return true
     if (!toDelete.size()) return true;
 
     //Delete all the colliding projectiles
-    for(int i = 0; i < (int)toDelete.size(); i++)
-        scene()->removeItem(toDelete[i]);
+    for(int i = 0; i < (int)toDelete.size(); i++) {
+        theGame->theScene->removeItem(toDelete[i]);
+        delete toDelete[i];
+    }
+
+    //Delete this enemy
+    scene()->removeItem(this);
+    delete this;
 
     //There was a collision
     return false;
@@ -88,7 +86,7 @@ bool Enemy::beforeMove() {
 //Call after every move
 void Enemy::afterMove() {
 
-    //If the BasicEnemy is off the screen, then delete it
+    //If the Enemy is off the screen, then delete it
     if (pos().y() > scene()->height()) {
 
         //Decrement health

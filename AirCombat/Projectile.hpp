@@ -15,6 +15,9 @@ public:
     Projectile()=delete;
     Projectile(uint s);
 
+    //Get the projectile's height;
+    virtual int getHeight() const = 0;
+
     //Set's the position
     virtual void setPosition(Shooter* Owner) = 0;
 
