@@ -27,7 +27,8 @@ SOURCES += main.cpp \
     Sound.cpp \
     SoundManager.cpp \
     Turret.cpp \
-    Missle.cpp
+    Missle.cpp \
+    FastEnemy.cpp
 
 HEADERS  += \
     Bullet.hpp \
@@ -44,7 +45,8 @@ HEADERS  += \
     Sound.hpp \
     SoundManager.hpp \
     Turret.hpp \
-    Missle.hpp
+    Missle.hpp \
+    FastEnemy.hpp
 
 FORMS    +=
 

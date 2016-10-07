@@ -36,7 +36,7 @@ Game::Game() {
     theScore = new Score();
     theScene->addItem(theScore);
 
-	//Spawn enemys every 2 seconds
+    //Spawn enemys every second
     QTimer *t = new QTimer();
     QObject::connect(t, SIGNAL(timeout()), this, SLOT(spawn()));
     t->start(1000);

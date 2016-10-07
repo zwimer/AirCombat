@@ -5,7 +5,7 @@
 #include <SoundManager.hpp>
 
 //Define the Missle's speed
-const uint Missle::Speed = 15;
+const uint Missle::Speed = 12;
 
 //Define the Missle's size
 const int Missle::pixelWidth = 20;

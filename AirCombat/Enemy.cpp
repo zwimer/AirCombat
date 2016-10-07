@@ -3,6 +3,7 @@
 #include "Score.hpp"
 #include "Game.hpp"
 #include "BasicEnemy.hpp"    //DELETE
+#include "FastEnemy.hpp"    //DELETE
 
 #include <vector>
 #include <stdlib.h>
@@ -20,7 +21,13 @@ void Enemy::spawn() {}
 Enemy* Enemy::spawnEnemy() {
 
     //Create a new enemy
-    Enemy *e = new BasicEnemy();    //CHANGE
+    Enemy *e;
+
+    //Randomize which, favor basic
+    if (rand()%7<5)
+        e = new BasicEnemy();    //CHANGE
+    else
+        e = new FastEnemy();
 
     //Randomize location
     e->setPos(rand()%(Game::Width - e->getWidth()), -(int)e->getHeight());
