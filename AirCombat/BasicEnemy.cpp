@@ -4,30 +4,27 @@
 
 #include <QGraphicsScene>
 
-//BasicEnemy's move speed
+//BasicEnemy's stats
 const uint BasicEnemy::Speed = 5;
+const uint BasicEnemy::ScoreValue = 1;
 
 //BasicEnemy's size
+const uint BasicEnemy::Width = 158;
 const uint BasicEnemy::Height = 100;
-const uint BasicEnemy::Width = 158; //100
 
 
 //Constructor
-BasicEnemy::BasicEnemy() : Enemy(getSpeed()) {
+BasicEnemy::BasicEnemy() : Enemy(Speed) {
 
     //Draw the enemy
     setPixmap(QPixmap(":/images/images/BasicEnemy.png"));
 }
 
 //Return the enemy's width
-inline uint BasicEnemy::getWidth() const {
-    return BasicEnemy::Width;
-}
+inline uint BasicEnemy::getWidth() const { return Width; }
 
 //Return the enemy's height
-inline uint BasicEnemy::getHeight() const {
-    return BasicEnemy::Height;
-}
+inline uint BasicEnemy::getHeight() const { return Height; }
 
-//Returns speed
-inline uint BasicEnemy::getSpeed() const { return (uint)Speed; }
+//Return the how many points the enemy is worth
+uint BasicEnemy::getScoreValue() const { return ScoreValue; }

@@ -10,11 +10,8 @@ public:
     //Construtor
     BasicEnemy();
 
-    //Returns speed
-    inline uint getSpeed() const;
-
-    //The speed of basic enemy
-    static const uint Speed;
+    //Returns stats
+    uint getScoreValue() const;
 
     //Return the enemy's size
     inline uint getWidth() const;
@@ -22,9 +19,13 @@ public:
 
 private:
 
+    //Stats
+    static const uint Speed;
+    static const uint ScoreValue;
+
     //Size of basic enemy
-    static const uint Height;
     static const uint Width;
+    static const uint Height;
 };
 
 #endif // BASICENEMY_H

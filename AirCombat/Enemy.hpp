@@ -11,8 +11,10 @@ public:
     Enemy()=delete;
     Enemy(uint s);
 
-    //Pure virtual methods
-    virtual inline uint getSpeed() const = 0;
+    //Get enemy's stats
+    virtual uint getScoreValue() const = 0;
+
+    //Get enemy's size
     virtual inline uint getWidth() const = 0;
     virtual inline uint getHeight() const = 0;
 

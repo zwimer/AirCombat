@@ -47,7 +47,7 @@ bool Enemy::checkDeath() {
         if (dynamic_cast<const Projectile*>(items[i]) != NULL) {
 
             //Increase the score
-            theGame->theScore->increase(1); //CHANGE
+            theGame->theScore->increase(getScoreValue()); //CHANGE
 
             //Note that this projectile should be deleted
             toDelete.push_back(items[i]);
