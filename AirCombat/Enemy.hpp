@@ -34,6 +34,11 @@ public slots:
 
     //Move's the enemy
     void move();
+
+private:
+
+    //Check if the plane was hit
+    bool checkDeath();
 };
 
 
