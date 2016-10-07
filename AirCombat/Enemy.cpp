@@ -23,7 +23,7 @@ Enemy* Enemy::spawnEnemy() {
     Enemy *e = new BasicEnemy();    //CHANGE
 
     //Randomize location
-    e->setPos(rand()%(Game::Width - e->getWidth()), 0*-(int)e->getHeight());
+    e->setPos(rand()%(Game::Width - e->getWidth()), -(int)e->getHeight());
 
     //Possibly override random location
     e->spawn();

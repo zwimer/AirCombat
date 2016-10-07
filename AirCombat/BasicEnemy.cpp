@@ -5,7 +5,7 @@
 #include <QGraphicsScene>
 
 //BasicEnemy's stats
-const uint BasicEnemy::Speed = 5;
+const uint BasicEnemy::Speed = 2;
 const uint BasicEnemy::ScoreValue = 1;
 
 //BasicEnemy's size
