@@ -6,14 +6,14 @@
 //Forward declerations
 class Shooter;
 
-//Note: must first inheret from QObject, THEN from ...
+//A Bullet
 class Bullet : public Projectile {
 public:
 
     //Constructor
     Bullet();
 
-    //Get the bullet's height
+    //Get the Bullet's height
     int getHeight() const;
 
     //Set Bullet's starting position
@@ -21,10 +21,11 @@ public:
 
 private:
 
-    //The bullet's speed
+    //The Bullet's stats
     static const uint Speed;
+    static const uint Damage;
 
-    //The bullet's size
+    //The Bullet's size
     static const int pixelWidth;
     static const int pixelHeight;
 };

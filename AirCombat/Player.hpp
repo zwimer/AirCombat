@@ -15,7 +15,7 @@
 
 #include "Bullet.hpp"           //DELETE;
 
-//Note: must first inheret from QObject, THEN from ...
+//The player
 class Player : public Shooter {
 public:
 

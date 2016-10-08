@@ -1,32 +1,26 @@
-Global time constant for appropriate abstract classes
-Folders/and move resource files if applicable there too
-Change BasicEnemy's constructor
-Auto Turrets
-settings and setup classses
+To make:
+	Create background for game
+	Settings and setup classses
+	Folders/and move resource files if applicable there too
 
-First:
-	Create a game where you can shoot at incoming enemies as a plane
-
-Second:
+Non-game todo:
 	Create read me
-	Allow multiple keys hit at once (if possible)
 
-Third:
+Possible extensions:
 	After basic functionality is added. Add the following:
-		• Tutorial
 		• Ammo
-		• Health
-		• Score
+		• Tutorial
+		• Game over
 		• Powerups
 		• Health packs
 		• Supply planes
-		• Different enemys
-		• Different ammo
 		• change key bindings option
-		• game over
+		• Make some weapons strong against certain enemies
 
-Forth: Maybe add the following?
+Maybe add the following?
 	stages
 	boss battle
 	winning conditions
 
+Fix:
+	Allow multiple keys hit at once (if possible)

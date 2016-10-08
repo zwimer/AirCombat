@@ -21,6 +21,7 @@ private:
 
     //Stats
     static const uint Speed;
+    static const uint Health;
     static const uint ScoreValue;
 
     //Size of basic enemy

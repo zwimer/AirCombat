@@ -13,36 +13,25 @@
 
 
 //Constructor
-Enemy::Enemy(uint s) : AutoMove(s) {}
+Enemy::Enemy(uint s, uint h) : AutoMove(s), health(h) {}
 
 //Override the enemy's spawn location if need be
 void Enemy::spawn() {}
 
-//Called by game to spawn an enemy
-Enemy* Enemy::spawnEnemy() {
-
-    //Create a new enemy
-    Enemy *e;
-
-    //Randomize which, favor basic
-    if (rand()%7<5)
-        e = new BasicEnemy();    //CHANGE
-    else
-        e = new FastEnemy();
-
-    //Randomize location
-    e->setPos(rand()%(Game::Width - e->getWidth()), -(int)e->getHeight());
-
-    //Possibly override random location
-    e->spawn();
-
-    //Return the new enemy
-    return e;
-}
+#include<QDebug>
+//Decrease health and return true if this enemy is dead
+bool Enemy::decreaseHealth(uint d)
+{ health -= d; return health <= 0; }
 
 //Check if the enemy was hit
 //If so, remove whatever you need
-bool Enemy::checkDeath() {
+bool Enemy::checkHit() {
+
+    //Becomes true if health < 0
+    bool isDead = false;
+
+    //A projectile pointer
+    Projectile *p;
 
     //A vector of items to delete
     std::vector<QGraphicsItem*> toDelete;
@@ -52,17 +41,14 @@ bool Enemy::checkDeath() {
     for(int i = 0; i < items.size(); i++)
 
         //If the projectile hits an enemy
-        if (dynamic_cast<const Projectile*>(items[i]) != NULL) {
+        if ((p = dynamic_cast<Projectile*>(items[i])) != NULL) {
 
-            //Increase the score
-            theGame->theScore->increase(getScoreValue()); //CHANGE
+            //Reduce the enemy's health
+            isDead = decreaseHealth(p->getDamage());
 
             //Note that this projectile should be deleted
             toDelete.push_back(items[i]);
         }
-
-    //If no collision, return true
-    if (!toDelete.size()) return true;
 
     //Delete all the colliding projectiles
     for(int i = 0; i < (int)toDelete.size(); i++) {
@@ -70,12 +56,38 @@ bool Enemy::checkDeath() {
         delete toDelete[i];
     }
 
+    //If the enemy is still alive, return true
+    if (!isDead) return true;
+
+    //Increase the score
+    theGame->theScore->increase(getScoreValue());
+
     //Delete this enemy
     scene()->removeItem(this);
     delete this;
 
-    //There was a collision
+    //The enemy is dead
     return false;
+}
+
+//Called by game to spawn an enemy
+Enemy* Enemy::spawnEnemy() {
+
+    //Create a new enemy
+    Enemy *e;
+
+    //Randomize which, prefer basic
+    if (rand()%7<5) e = new BasicEnemy();    //CHANGE
+    else e = new FastEnemy();
+
+    //Randomize location
+    e->setPos(rand()%(Game::Width - e->getWidth()), -(int)e->getHeight());
+
+    //Possibly override random location
+    e->spawn();
+
+    //Return the new enemy
+    return e;
 }
 
 //Call before every move
@@ -88,7 +100,7 @@ bool Enemy::beforeMove() {
             theGame->GameOver();
 
     //Check if the plane was hit
-    return checkDeath();
+    return checkHit();
 }
 
 //Call after every move
@@ -106,5 +118,5 @@ void Enemy::afterMove() {
     }
 
     //Check if the plane was hit
-    checkDeath();
+    checkHit();
 }

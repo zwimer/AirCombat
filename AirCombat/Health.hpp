@@ -5,6 +5,7 @@
 
 #include <QGraphicsTextItem>
 
+//The player's health
 class Health : public QGraphicsTextItem{
 public:
 

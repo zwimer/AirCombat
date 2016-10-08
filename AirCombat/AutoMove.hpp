@@ -4,6 +4,8 @@
 #include <QObject>
 #include <QGraphicsPixmapItem>
 
+//An abstract class moves autonomously
+//Note, must inheret from QObject first!
 class AutoMove : public QObject, public QGraphicsPixmapItem {
     Q_OBJECT
 public:

@@ -4,27 +4,28 @@
 #include <QTimer>
 #include <SoundManager.hpp>
 
-//Define the bullet's speed
+//Define the Bullet's stats
 const uint Bullet::Speed = 5;
+const uint Bullet::Damage = 2;
 
-//Define the bullet's size
+//Define the Bullet's size
 const int Bullet::pixelWidth = 6;
 const int Bullet::pixelHeight = 40;
 
 //Constructor
-Bullet::Bullet() : Projectile(Bullet::Speed) {
+Bullet::Bullet() : Projectile(Speed, Damage) {
 
-    //Draw the bullet
+    //Draw the Bullet
     setPixmap(QPixmap(":/images/images/Bullet.png"));
 
-    //Play the bullet sound
+    //Play the Bullet sound
     SoundManager::newSound("qrc:/sounds/sounds/Bullet.mp3");
 }
 
-//Return the height of the bullet
+//Return the height of the Bullet
 int Bullet::getHeight() const { return pixelHeight; }
 
-//Set the bullet's position
+//Set the Bullet's position
 void Bullet::setPosition(Shooter* Owner) {
     setPos(Owner->getX()+Owner->getWidth()/2-pixelWidth/2,Owner->getY());
 }

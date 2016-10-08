@@ -5,7 +5,10 @@
 #include <QGraphicsScene>
 
 //Constructor
-Projectile::Projectile(uint s) : AutoMove(-(int)s) {}
+Projectile::Projectile(uint s, uint d) : AutoMove(-(int)s), damage(d) {}
+
+//Get the damage of the projectile
+uint Projectile::getDamage() const { return damage; }
 
 //The projectile's afterMove function
 void Projectile::afterMove() {
@@ -17,7 +20,6 @@ void Projectile::afterMove() {
         theGame->theScene->removeItem(this);
         delete this;
     }
-
 }
 
 //The projectile's beforeMove function

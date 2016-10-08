@@ -7,6 +7,7 @@
 //Forward declerations
 class Projectile;
 
+//Allows sub-classes to shoot projectiles
 class Shooter : public QGraphicsPixmapItem {
 public:
 

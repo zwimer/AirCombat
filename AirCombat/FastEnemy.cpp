@@ -6,6 +6,7 @@
 
 //FastEnemy's stats
 const uint FastEnemy::Speed = 8;
+const uint FastEnemy::Health = 2;
 const uint FastEnemy::ScoreValue = 5;
 
 //FastEnemy's size
@@ -14,7 +15,7 @@ const uint FastEnemy::Height = 152;
 
 
 //Constructor
-FastEnemy::FastEnemy() : Enemy(Speed) {
+FastEnemy::FastEnemy() : Enemy(Speed, Health) {
 
     //Draw the enemy
     setPixmap(QPixmap(":/images/images/FastEnemy.png"));

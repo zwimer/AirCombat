@@ -6,7 +6,7 @@
 //Forward declerations
 class Shooter;
 
-//Note: must first inheret from QObject, THEN from ...
+//A missle
 class Missle : public Projectile {
 public:
 
@@ -21,8 +21,9 @@ public:
 
 private:
 
-    //The Missle's speed
+    //The Missle's stats
     static const uint Speed;
+    static const uint Damage;
 
     //The Missle's size
     static const int pixelWidth;

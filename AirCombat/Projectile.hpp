@@ -13,7 +13,10 @@ public:
     //Constructor
     //Takes unsigned speed argument
     Projectile()=delete;
-    Projectile(uint s);
+    Projectile(uint s, uint d);
+
+    //Returns the damage done if an enemy is hit
+    uint getDamage() const;
 
     //Get the projectile's height;
     virtual int getHeight() const = 0;
@@ -26,6 +29,9 @@ protected:
     //Functions to be called when the bullet moves
     void afterMove();
     bool beforeMove();
+
+    //Representation
+    uint damage;
 };
 
 #endif // PROJECTILE_H

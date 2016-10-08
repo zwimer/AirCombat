@@ -3,13 +3,17 @@
 
 #include "AutoMove.hpp"
 
-//Note: must first inheret from QObject, THEN from ...
+//An abstract enemy class
 class Enemy : public AutoMove {
 public:
 
     //Constructor
     Enemy()=delete;
-    Enemy(uint s);
+    Enemy(uint s, uint h);
+
+    //Decrease enemy's health
+    //Returns true if the enemy has been destroyed
+    bool decreaseHealth(uint d);
 
     //Get enemy's stats
     virtual uint getScoreValue() const = 0;
@@ -40,7 +44,10 @@ public slots:
 private:
 
     //Check if the plane was hit
-    bool checkDeath();
+    bool checkHit();
+
+    //Representation
+    int health;
 };
 
 

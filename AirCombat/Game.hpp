@@ -8,7 +8,6 @@
 //Forward declerations
 class Score;
 class Player;
-#include <SmartScene.hpp>
 class SmartScene;
 class QMediaPlayer;
 
