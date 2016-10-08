@@ -7,15 +7,15 @@
 Shooter::Shooter() {}
 
 //Fire a projectile
-void Shooter::fire(Projectile *p, Shooter *Turret) {
+void Shooter::fire(Projectile *p) {
 
-    //Set the location of the projectile
-    if (!Turret) p->setPosition(this);
-    else p->setPosition(Turret);
+    //Set up the projectile
+    p->setup();
 
-    //Add the bullet to the scene
+    //Add the projectile to the scene
     theGame->theScene->addItem(p);
 }
 
+//Get the shooter's location
 int Shooter::getX() const { return x(); }
 int Shooter::getY() const { return y(); }

@@ -3,10 +3,7 @@
 
 //Constructor
 Turret::Turret(Shooter* o, int x, int y, uint t)
-    : offsetX(x), offsetY(y) {
-
-    //What the turret is on
-    Owner = o;
+    : Owner(o), offsetX(x), offsetY(y) {
 
     //Create a timer
     timer = new QTimer();
@@ -45,4 +42,4 @@ uint Turret::getWidth() const { return 0; }
 uint Turret::getHeight() const { return 0; }
 
 //Fire the turret
-void Turret::shoot() { fire(new Missle(), this); }
+void Turret::shoot() { fire(new Missle(this)); }

@@ -6,7 +6,8 @@
 #include <QGraphicsScene>
 
 //Constructor
-Projectile::Projectile(uint s, uint d) : AutoMove(-(int)s), damage(d) {}
+Projectile::Projectile(Shooter* o, uint s, uint d)
+    : AutoMove(-(int)s), Owner(o), damage(d) {}
 
 //Get the damage of the projectile
 uint Projectile::getDamage() const { return damage; }
@@ -27,6 +28,5 @@ void Projectile::afterMove() {
 bool Projectile::beforeMove() { return true; }
 
 //Set the Bullet's position
-void Projectile::setPosition(Shooter* Owner) {
-    setPos(Owner->getX()+Owner->getWidth()/2-getWidth()/2,Owner->getY());
-}
+void Projectile::setup()
+{ setPos(Owner->getX()+Owner->getWidth()/2-getWidth()/2,Owner->getY()); }

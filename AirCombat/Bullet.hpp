@@ -11,7 +11,8 @@ class Bullet : public Projectile {
 public:
 
     //Constructor
-    Bullet();
+    Bullet() = delete;
+    Bullet(Shooter *o);
 
     //Get the Bullet's size
     int getHeight() const;

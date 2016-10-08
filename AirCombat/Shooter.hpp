@@ -15,7 +15,7 @@ public:
     Shooter();
 
     //Fire
-    void fire(Projectile *p, Shooter *Turret = NULL);
+    void fire(Projectile *p);
 
 
     virtual int getX() const;

@@ -10,16 +10,17 @@ class Shooter;
 class Projectile: public AutoMove {
 public:
 
-    //Constructor
-    //Takes unsigned speed argument
+    //Delete default constructor
     Projectile()=delete;
-    Projectile(uint s, uint d);
+
+    //Takes unsigned speed and damage arguments
+    Projectile(Shooter* o, uint s, uint d);
+
+    //Set up the projectile
+    void setup();
 
     //Returns the damage done if an enemy is hit
     uint getDamage() const;
-
-    //Set's the position
-    void setPosition(Shooter* Owner);
 
 protected:
 
@@ -27,12 +28,15 @@ protected:
     virtual int getWidth() const = 0;
     virtual int getHeight() const = 0;
 
+    //Representation
+    const Shooter* Owner;
+    const uint damage;
+
+private:
+
     //AutoMove functions
     void afterMove();
     bool beforeMove();
-
-    //Representation
-    uint damage;
 };
 
 #endif // PROJECTILE_H

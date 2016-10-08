@@ -36,7 +36,7 @@ public slots:
 private:
 
     //What the turret is on
-    Shooter *Owner;
+    const Shooter *Owner;
 
     //To keep track of when the turret should shoot
     QTimer *timer;

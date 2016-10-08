@@ -28,10 +28,8 @@ Game::Game() {
 	theWindow->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     theWindow->setFixedSize(Width,Height);
 
-
+    //Allow moust tracking
     theWindow->setMouseTracking(true);
-
-
 
 	//Create a player, and center him
     P1 = new Player(theWindow);

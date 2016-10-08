@@ -11,7 +11,8 @@ class Missle : public Projectile {
 public:
 
     //Constructor
-    Missle();
+    Missle() = delete;
+    Missle(Shooter *o);
 
     //Get the Missle's size
     int getHeight() const;
