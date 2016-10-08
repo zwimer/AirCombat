@@ -10,14 +10,14 @@ public:
     //Construtor
     FastEnemy();
 
-    //Returns stats
-    uint getScoreValue() const;
-
     //Return the enemy's size
     inline uint getWidth() const;
     inline uint getHeight() const;
 
 private:
+
+    //Returns stats
+    uint getScoreValue() const;
 
     //Stats
     static const uint Speed;

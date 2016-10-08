@@ -18,15 +18,16 @@ public:
     //Returns the damage done if an enemy is hit
     uint getDamage() const;
 
-    //Get the projectile's height;
-    virtual int getHeight() const = 0;
-
     //Set's the position
-    virtual void setPosition(Shooter* Owner) = 0;
+    void setPosition(Shooter* Owner);
 
 protected:
 
-    //Functions to be called when the bullet moves
+    //Get the projectile's size;
+    virtual int getWidth() const = 0;
+    virtual int getHeight() const = 0;
+
+    //AutoMove functions
     void afterMove();
     bool beforeMove();
 

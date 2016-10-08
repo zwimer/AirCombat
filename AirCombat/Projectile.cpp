@@ -1,5 +1,6 @@
 #include "Projectile.hpp"
 #include "SmartScene.hpp"
+#include "Shooter.hpp"
 #include "Game.hpp"
 
 #include <QGraphicsScene>
@@ -24,3 +25,8 @@ void Projectile::afterMove() {
 
 //The projectile's beforeMove function
 bool Projectile::beforeMove() { return true; }
+
+//Set the Bullet's position
+void Projectile::setPosition(Shooter* Owner) {
+    setPos(Owner->getX()+Owner->getWidth()/2-getWidth()/2,Owner->getY());
+}

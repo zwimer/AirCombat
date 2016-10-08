@@ -22,10 +22,6 @@ Missle::Missle() : Projectile(Speed, Damage) {
     SoundManager::newSound("qrc:/sounds/sounds/Missle.mp3");
 }
 
-//Return the height of the Missle
+//Return the size of the Missle
+int Missle::getWidth() const { return pixelWidth; }
 int Missle::getHeight() const { return pixelHeight; }
-
-//Set the Missle's position
-void Missle::setPosition(Shooter* Owner) {
-    setPos(Owner->getX()+Owner->getWidth()/2-pixelWidth/2,Owner->getY());
-}

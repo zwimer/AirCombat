@@ -13,11 +13,9 @@ public:
     //Constructor
     Missle();
 
-    //Get the Missle's height
+    //Get the Missle's size
     int getHeight() const;
-
-    //Set Missle's starting position
-    void setPosition(Shooter *Owner);
+    int getWidth() const;
 
 private:
 
