@@ -2,11 +2,13 @@
 
 #include "Game.hpp"
 
-//Templated                     CHANGE
-//#include "Turret.cpp"
-
 //Must make the game global
 Game * theGame;
+
+//Small gcd function
+int gcd(int a, int b) {
+    return b == 0 ? a : gcd(b, a % b);
+}
 
 //Main function
 int main(int argc, char *argv[]) {

@@ -9,4 +9,7 @@ template <typename T> int sgn(T val) {
     return (T(0) < val) - (val < T(0));
 }
 
+//Returns the gcd of a and b
+int gcd(int a, int b);
+
 #endif // MAIN_H

@@ -94,7 +94,7 @@ Enemy* Enemy::spawnEnemy() {
 }
 
 //Call before every move
-bool Enemy::beforeMove() {
+bool Enemy::beforeTurn() {
 
     //If the enemy collides with the player, game over
     QList<QGraphicsItem *> items = collidingItems();
@@ -107,7 +107,7 @@ bool Enemy::beforeMove() {
 }
 
 //Call after every move
-void Enemy::afterMove() {
+void Enemy::afterTurn() {
 
     //If the Enemy is off the screen, then delete it
     if (pos().y() > scene()->height()) {

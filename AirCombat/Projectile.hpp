@@ -33,8 +33,8 @@ private:
     const uint damage;
 
     //AutoMove functions
-    void afterMove();
-    bool beforeMove();
+    void afterTurn();
+    bool beforeTurn();
 };
 
 #endif // PROJECTILE_H

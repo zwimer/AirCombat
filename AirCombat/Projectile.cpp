@@ -12,8 +12,8 @@ Projectile::Projectile(const Shooter* o, uint s, uint d)
 //Get the damage of the projectile
 uint Projectile::getDamage() const { return damage; }
 
-//The projectile's afterMove function
-void Projectile::afterMove() {
+//The projectile's afterTurn function
+void Projectile::afterTurn() {
 
     //If the Projectile is off the screen, then delete it
     if (pos().y() < -(int)getHeight()) {
@@ -24,8 +24,8 @@ void Projectile::afterMove() {
     }
 }
 
-//The projectile's beforeMove function
-bool Projectile::beforeMove() { return true; }
+//The projectile's beforeTurn function
+bool Projectile::beforeTurn() { return true; }
 
 //Set the Bullet's position
 void Projectile::setup()

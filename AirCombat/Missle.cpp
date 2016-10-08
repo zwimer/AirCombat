@@ -3,8 +3,8 @@
 #include <SoundManager.hpp>
 
 //Define the Missle's stats
-const uint Missle::Speed = 12;
-const uint Missle::Damage = 8;
+const uint Missle::Speed = 160;
+const uint Missle::Damage = 80;
 
 //Define the Missle's size
 const int Missle::pixelWidth = 20;

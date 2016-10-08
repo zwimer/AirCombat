@@ -2,8 +2,8 @@
 
 
 //FastEnemy's stats
-const uint FastEnemy::Speed = 8;
-const uint FastEnemy::Health = 2;
+const uint FastEnemy::Speed = 80;
+const uint FastEnemy::Health = 20;
 const uint FastEnemy::ScoreValue = 5;
 
 //FastEnemy's size

@@ -1,8 +1,8 @@
 #include "BasicEnemy.hpp"
 
 //BasicEnemy's stats
-const uint BasicEnemy::Speed = 2;
-const uint BasicEnemy::Health = 4;
+const uint BasicEnemy::Speed = 20;
+const uint BasicEnemy::Health = 40;
 const uint BasicEnemy::ScoreValue = 1;
 
 //BasicEnemy's size

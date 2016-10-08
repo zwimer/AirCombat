@@ -3,8 +3,8 @@
 #include <SoundManager.hpp>
 
 //Define the Bullet's stats
-const uint Bullet::Speed = 5;
-const uint Bullet::Damage = 2;
+const uint Bullet::Speed = 80;
+const uint Bullet::Damage = 20;
 
 //Define the Bullet's size
 const int Bullet::pixelWidth = 6;
