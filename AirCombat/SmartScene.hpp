@@ -12,7 +12,7 @@ public:
     //Constructor
     SmartScene();
 
-public slots:
+private slots:
 
     //Move the player
     void mouseMoveEvent(QGraphicsSceneMouseEvent *e);

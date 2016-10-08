@@ -11,5 +11,4 @@ void SmartScene::mouseMoveEvent(QGraphicsSceneMouseEvent *e)
 
 //Fire a bullet
 void SmartScene::mousePressEvent(QGraphicsSceneMouseEvent *)
-{ theGame->P1->fire(new Bullet()); }
-
+{ theGame->P1->fire(new Bullet(theGame->P1)); }
