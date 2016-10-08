@@ -2,6 +2,7 @@
 #include "Player.hpp"
 #include "Score.hpp"
 #include "Game.hpp"
+#include "SmartScene.hpp"
 #include "BasicEnemy.hpp"    //DELETE
 #include "FastEnemy.hpp"    //DELETE
 

@@ -2,11 +2,14 @@
 #define GAME_H
 
 #include <QObject>
+#include <QgraphicsView>
 #include <QGraphicsScene>
 
 //Forward declerations
 class Score;
 class Player;
+#include <SmartScene.hpp>
+class SmartScene;
 class QMediaPlayer;
 
 class Game : public QObject {
@@ -25,7 +28,8 @@ public:
     //Representation
     Player *P1;
     Score *theScore;
-    QGraphicsScene *theScene;
+    SmartScene *theScene;
+    QGraphicsView *theWindow;
 
     //Static const variables
     static const uint Height;

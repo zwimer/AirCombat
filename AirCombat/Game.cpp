@@ -1,12 +1,11 @@
 #include "Game.hpp"
+#include "Enemy.hpp"
 #include "Score.hpp"
 #include "Player.hpp"
-#include "BasicEnemy.hpp"
+#include "SmartScene.hpp"
 
 #include <QBrush>
 #include <QTimer>
-#include <QGraphicsScene>
-#include <QgraphicsView>
 #include <QMediaPlayer>
 
 //The Game's size
@@ -17,17 +16,22 @@ const uint Game::Width = 800;
 Game::Game() {
 
 	//Create a scene and define it's size
-    theScene = new QGraphicsScene();
+    theScene = new SmartScene();
     theScene->setSceneRect(0,0,Width,Height);
 
     //Create the background
     theScene->setBackgroundBrush(QBrush(QImage(":/images/images/Background")));
 
 	//Create and setup the window
-	QGraphicsView *theWindow = new QGraphicsView(theScene);
+    theWindow = new QGraphicsView(theScene);
 	theWindow->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 	theWindow->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     theWindow->setFixedSize(Width,Height);
+
+
+    theWindow->setMouseTracking(true);
+
+
 
 	//Create a player, and center him
     P1 = new Player(theWindow);
@@ -39,7 +43,7 @@ Game::Game() {
     //Spawn enemys every second
     QTimer *t = new QTimer();
     QObject::connect(t, SIGNAL(timeout()), this, SLOT(spawn()));
-    t->start(1000);
+    t->start(500);
 
     //Play background music
     theMusic = new QMediaPlayer();

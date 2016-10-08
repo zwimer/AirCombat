@@ -3,8 +3,13 @@
 #include "Bullet.hpp"
 #include "Game.hpp"
 
+#include <math.h>
+
 #include <QGraphicsScene>
 
+
+//Player's move speed
+const int Player::MoveSpeed = 1;
 
 //Set player's default health
 const int Player::DefaultHealth = 3;
@@ -45,20 +50,22 @@ uint Player::getWidth() const { return Player::pixelWidth; }
 uint Player::getHeight() const { return Player::pixelHeight; }
 
 //If a button was pressed
-void Player::keyPressEvent(QKeyEvent *e) {
+void Player::keyPressEvent(QKeyEvent *e) {}
 
-    //Move left
-    if (e->key() == Qt::Key_Left) {
-        if (pos().x() > 0)
-             setPos(x()-25,y());
-    }
+#include <QDebug>
+void Player::mouseMoved(QPointF p) {
 
-    //Move right
-    else if (e->key() == Qt::Key_Right) {
-        if (pos().x() + 100 < 800)    //CHANGE
-            setPos(x()+25,y());
-    }
+    //Shift the points so that the
+    //mouse is in the center of the player
+    int Cx = (int)p.x() - pixelWidth/2;
+    int Cy = (int)p.y() - pixelHeight/2;
 
-    //Shoot
-    else if (e->key() == Qt::Key_Space) { fire(new Bullet()); } //CHANGE
+    //If the mouse is out of bounds move it back in
+    if (Cx < 0) Cx = 0;
+    else if (Cx >= (int)(Game::Width-pixelWidth)) Cx = Game::Width-pixelWidth-1;
+    if (Cy < 0) Cy = 0;
+    else if (Cy >= (int)(Game::Height-pixelHeight)) Cy = Game::Height-pixelHeight-1;
+
+    //Move the player
+    setPos(Cx,Cy);
 }

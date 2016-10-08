@@ -1,4 +1,5 @@
 #include "Projectile.hpp"
+#include "SmartScene.hpp"
 #include "Game.hpp"
 
 #include <QGraphicsScene>

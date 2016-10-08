@@ -1,5 +1,6 @@
 #include "Shooter.hpp"
 #include "Projectile.hpp"
+#include "SmartScene.hpp"
 #include "Game.hpp"
 
 //Consturctor

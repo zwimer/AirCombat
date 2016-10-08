@@ -5,6 +5,7 @@
 
 #include "Health.hpp"
 #include <QObject>
+#include <QPointF>
 #include <QKeyEvent>
 #include <QGraphicsView>
 #include <QGraphicsRectItem>
@@ -23,6 +24,7 @@ public:
     ~Player();
 
     //Allows the player to move
+    void mouseMoved(QPointF p);
     void keyPressEvent(QKeyEvent *e);
 
     //Returns the size of the player
@@ -44,6 +46,9 @@ private:
     //Size
     static const int pixelWidth;
     static const int pixelHeight;
+
+    //Move Speed
+    static const int MoveSpeed;
 };
 
 #endif

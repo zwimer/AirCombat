@@ -9,7 +9,7 @@
 #include <QTimer>
 
 //A turret class that shoots T
-class Turret : public QObject, public Shooter {
+class Turret: public QObject, public Shooter {
     Q_OBJECT
 public:
 
