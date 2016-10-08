@@ -1,8 +1,5 @@
 #include "FastEnemy.hpp"
-#include "Health.hpp"
-#include "Game.hpp"
 
-#include <QGraphicsScene>
 
 //FastEnemy's stats
 const uint FastEnemy::Speed = 8;

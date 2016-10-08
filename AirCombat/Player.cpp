@@ -1,9 +1,6 @@
 #include "Player.hpp"
-#include "BasicEnemy.hpp"
 #include "Bullet.hpp"
 #include "Game.hpp"
-
-#include <QGraphicsScene>
 
 
 //Player's move speed

@@ -9,9 +9,6 @@
 #include <vector>
 #include <stdlib.h>
 
-#include <QGraphicsScene>
-
-
 //Constructor
 Enemy::Enemy(uint s, uint h) : AutoMove(s), health(h) {}
 

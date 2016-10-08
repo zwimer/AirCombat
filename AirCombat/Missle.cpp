@@ -1,7 +1,5 @@
 #include "Missle.hpp"
-#include "Shooter.hpp"
 
-#include <QTimer>
 #include <SoundManager.hpp>
 
 //Define the Missle's stats

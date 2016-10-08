@@ -1,6 +1,7 @@
 #include "Turret.hpp"
 #include "Missle.hpp"
 
+
 //Constructor
 Turret::Turret(Shooter* o, int x, int y, uint t)
     : Owner(o), offsetX(x), offsetY(y) {

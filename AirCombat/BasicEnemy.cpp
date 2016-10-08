@@ -1,8 +1,4 @@
 #include "BasicEnemy.hpp"
-#include "Health.hpp"
-#include "Game.hpp"
-
-#include <QGraphicsScene>
 
 //BasicEnemy's stats
 const uint BasicEnemy::Speed = 2;
