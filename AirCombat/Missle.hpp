@@ -14,11 +14,11 @@ public:
     Missle() = delete;
     Missle(Shooter *o);
 
+private:
+
     //Get the Missle's size
     int getHeight() const;
     int getWidth() const;
-
-private:
 
     //The Missle's stats
     static const uint Speed;

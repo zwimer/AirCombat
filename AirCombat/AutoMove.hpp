@@ -21,9 +21,6 @@ private slots:
 
 protected:
 
-    //Returns speed
-    int getSpeed() const;
-
     //To be implemented by derived classes
     virtual void afterMove()=0;
 

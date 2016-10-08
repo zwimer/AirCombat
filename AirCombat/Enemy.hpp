@@ -11,10 +11,6 @@ public:
     Enemy()=delete;
     Enemy(uint s, uint h);
 
-    //Get enemy's size
-    virtual inline uint getWidth() const = 0;
-    virtual inline uint getHeight() const = 0;
-
     //Called by the game to spawn an enemy
     static Enemy* spawnEnemy();
 
@@ -36,8 +32,8 @@ private:
     //Otherwise, do not implement this function!
     virtual void spawn();
 
-    //Get enemy's stats
-    virtual uint getScoreValue() const = 0;
+    //Check if the plane was hit
+    bool checkHit();
 
     //Decrease enemy's health
     //Returns true if the enemy has been destroyed
@@ -46,8 +42,12 @@ private:
     //Alert the enemy that it is injured
     virtual void healthChanged(uint h);
 
-    //Check if the plane was hit
-    bool checkHit();
+    //Get enemy's stats
+    virtual uint getScoreValue() const = 0;
+
+    //Get enemy's size
+    virtual inline uint getWidth() const = 0;
+    virtual inline uint getHeight() const = 0;
 
     //Representation
     int health;

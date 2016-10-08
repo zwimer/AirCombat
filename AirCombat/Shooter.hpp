@@ -17,7 +17,7 @@ public:
     //Fire
     void fire(Projectile *p);
 
-
+    //Get the location of the shooter
     virtual int getX() const;
     virtual int getY() const;
 

@@ -3,8 +3,6 @@
 #include "Bullet.hpp"
 #include "Game.hpp"
 
-#include <math.h>
-
 #include <QGraphicsScene>
 
 
@@ -21,16 +19,12 @@ const int Player::pixelHeight = 104;
 //Constructor
 Player::Player(QGraphicsView *theWindow) {
 
-    //Focus the player
-    this->setFlag(QGraphicsItem::ItemIsFocusable);
-    this->setFocus();
-
     //Make the Player's health
     health = new Health(Player::DefaultHealth);
     health->setPos(health->x(), health->y()+25);
     theWindow->scene()->addItem(health);
 
-    //Set the player's size and location
+    //Set the player's size and starting location
     setPixmap(QPixmap(":/images/images/Player.png"));
     setPos(theWindow->width()/2, theWindow->height() - pixelHeight);
 
@@ -49,10 +43,7 @@ Player::~Player() { delete health; }
 uint Player::getWidth() const { return Player::pixelWidth; }
 uint Player::getHeight() const { return Player::pixelHeight; }
 
-//If a button was pressed
-void Player::keyPressEvent(QKeyEvent *) {}
-
-#include <QDebug>
+//If the mouse was moved, go to it
 void Player::mouseMoved(QPointF p) {
 
     //Shift the points so that the

@@ -14,11 +14,11 @@ public:
     Bullet() = delete;
     Bullet(Shooter *o);
 
+private:
+
     //Get the Bullet's size
     int getHeight() const;
     int getWidth() const;
-
-private:
 
     //The Bullet's stats
     static const uint Speed;

@@ -20,12 +20,17 @@ class Player : public Shooter {
 public:
 
     //Constructor
+    Player() = delete;
     Player(QGraphicsView *theWindow);
     ~Player();
 
     //Allows the player to move
     void mouseMoved(QPointF p);
-    void keyPressEvent(QKeyEvent *e);
+
+    //Player's health
+    Health *health;
+
+private:
 
     //Returns the size of the player
     uint getWidth() const;
@@ -34,11 +39,6 @@ public:
     //Wing turrets
     Turret *WingTurretL;
     Turret *WingTurretR;
-
-    //Representation
-    Health *health;
-
-private:
 
     //Default health
     static const int DefaultHealth;

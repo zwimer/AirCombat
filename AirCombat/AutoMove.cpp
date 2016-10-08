@@ -12,11 +12,6 @@ AutoMove::AutoMove(int s) : speed(s) {
     t->start(25);
 }
 
-int AutoMove::getSpeed() const {
-    return speed;
-}
-
-
 //The bullet's move function
 void AutoMove::move() {
 

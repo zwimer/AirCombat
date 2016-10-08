@@ -20,6 +20,13 @@ public:
     //Set fire rate
     void setFireRate(uint t);
 
+public slots:
+
+    //Shoots
+    void shoot();
+
+private:
+
     //Returns the location of the turret
     int getX() const;
     int getY() const;
@@ -27,13 +34,6 @@ public:
     //Returns the size of the turret
     uint getWidth() const;
     uint getHeight() const;
-
-public slots:
-
-    //Shoots
-    void shoot();
-
-private:
 
     //What the turret is on
     const Shooter *Owner;

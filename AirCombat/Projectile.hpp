@@ -22,7 +22,7 @@ public:
     //Returns the damage done if an enemy is hit
     uint getDamage() const;
 
-protected:
+private:
 
     //Get the projectile's size;
     virtual int getWidth() const = 0;
