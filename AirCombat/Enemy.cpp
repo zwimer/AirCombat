@@ -23,6 +23,9 @@ void Enemy::spawn() {}
 bool Enemy::decreaseHealth(uint d)
 { health -= d; return health <= 0; }
 
+//Default do nothing
+void Enemy::healthChanged(uint) {}
+
 //Check if the enemy was hit
 //If so, remove whatever you need
 bool Enemy::checkHit() {
@@ -55,6 +58,9 @@ bool Enemy::checkHit() {
         theGame->theScene->removeItem(toDelete[i]);
         delete toDelete[i];
     }
+
+    //Update the enemy sub-class
+    if (toDelete.size()) this->healthChanged(health);
 
     //If the enemy is still alive, return true
     if (!isDead) return true;

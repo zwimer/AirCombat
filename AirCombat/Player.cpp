@@ -50,7 +50,7 @@ uint Player::getWidth() const { return Player::pixelWidth; }
 uint Player::getHeight() const { return Player::pixelHeight; }
 
 //If a button was pressed
-void Player::keyPressEvent(QKeyEvent *e) {}
+void Player::keyPressEvent(QKeyEvent *) {}
 
 #include <QDebug>
 void Player::mouseMoved(QPointF p) {

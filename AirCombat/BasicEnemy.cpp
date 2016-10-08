@@ -21,6 +21,11 @@ BasicEnemy::BasicEnemy() : Enemy(Speed, Health) {
     setPixmap(QPixmap(":/images/images/BasicEnemy.png"));
 }
 
+
+//Redraw the enemy if needed
+void BasicEnemy::healthChanged(uint h)
+{ if (h <= Health/2) setPixmap(QPixmap(":/images/images/BasicEnemyInjured.png")); }
+
 //Return the enemy's width
 inline uint BasicEnemy::getWidth() const { return Width; }
 

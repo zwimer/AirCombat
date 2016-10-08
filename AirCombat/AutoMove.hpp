@@ -14,7 +14,7 @@ public:
     AutoMove()=delete;
     AutoMove(int s);
 
-public slots:
+private slots:
 
     //Move
     void move();

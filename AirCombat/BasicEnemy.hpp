@@ -13,6 +13,9 @@ public:
     //Returns stats
     uint getScoreValue() const;
 
+    //Redraw the enemy if needed
+    void healthChanged(uint h);
+
     //Return the enemy's size
     inline uint getWidth() const;
     inline uint getHeight() const;
