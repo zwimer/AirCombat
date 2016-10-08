@@ -1,7 +1,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include <Turret.hpp>                                                         //CHANGE
+#include <Turret.hpp>
 
 #include "Health.hpp"
 #include <QObject>
@@ -37,8 +37,8 @@ private:
     uint getHeight() const;
 
     //Wing turrets
-    Turret *WingTurretL;
-    Turret *WingTurretR;
+    AbstractTurret *WingTurretL;
+    AbstractTurret *WingTurretR;
 
     //Default health
     static const int DefaultHealth;

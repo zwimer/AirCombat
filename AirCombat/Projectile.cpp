@@ -6,7 +6,7 @@
 #include <QGraphicsScene>
 
 //Constructor
-Projectile::Projectile(Shooter* o, uint s, uint d)
+Projectile::Projectile(const Shooter* o, uint s, uint d)
     : AutoMove(-(int)s), Owner(o), damage(d) {}
 
 //Get the damage of the projectile

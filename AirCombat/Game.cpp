@@ -38,10 +38,10 @@ Game::Game() {
     theScore = new Score();
     theScene->addItem(theScore);
 
-    //Spawn enemys every second
+    //Link enemy spawning to a timer
     QTimer *t = new QTimer();
     QObject::connect(t, SIGNAL(timeout()), this, SLOT(spawn()));
-    t->start(500);
+    t->start(900);
 
     //Play background music
     theMusic = new QMediaPlayer();

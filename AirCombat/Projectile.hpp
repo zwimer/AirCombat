@@ -14,7 +14,7 @@ public:
     Projectile()=delete;
 
     //Takes unsigned speed and damage arguments
-    Projectile(Shooter* o, uint s, uint d);
+    Projectile(const Shooter* o, uint s, uint d);
 
     //Set up the projectile
     void setup();
@@ -31,8 +31,6 @@ private:
     //Representation
     const Shooter* Owner;
     const uint damage;
-
-private:
 
     //AutoMove functions
     void afterMove();

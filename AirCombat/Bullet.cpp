@@ -11,7 +11,7 @@ const int Bullet::pixelWidth = 6;
 const int Bullet::pixelHeight = 40;
 
 //Constructor
-Bullet::Bullet(Shooter *o) : Projectile(o, Speed, Damage) {
+Bullet::Bullet(const Shooter *o) : Projectile(o, Speed, Damage) {
 
     //Draw the Bullet
     setPixmap(QPixmap(":/images/images/Bullet.png"));

@@ -12,7 +12,7 @@ public:
 
     //Constructor
     Bullet() = delete;
-    Bullet(Shooter *o);
+    Bullet(const Shooter *o);
 
 private:
 

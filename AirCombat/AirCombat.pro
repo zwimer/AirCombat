@@ -26,10 +26,10 @@ SOURCES += main.cpp \
     AutoMove.cpp \
     Sound.cpp \
     SoundManager.cpp \
-    Turret.cpp \
     Missle.cpp \
     FastEnemy.cpp \
-    SmartScene.cpp
+    SmartScene.cpp \
+    AbstractTurret.cpp
 
 HEADERS  += \
     Bullet.hpp \
@@ -45,10 +45,11 @@ HEADERS  += \
     AutoMove.hpp \
     Sound.hpp \
     SoundManager.hpp \
-    Turret.hpp \
     Missle.hpp \
     FastEnemy.hpp \
-    SmartScene.hpp
+    SmartScene.hpp \
+    AbstractTurret.hpp \
+    Turret.hpp
 
 FORMS    +=
 

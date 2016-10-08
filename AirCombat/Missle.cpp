@@ -11,7 +11,7 @@ const int Missle::pixelWidth = 20;
 const int Missle::pixelHeight = 62;
 
 //Constructor
-Missle::Missle(Shooter *o) : Projectile(o, Speed, Damage) {
+Missle::Missle(const Shooter *o) : Projectile(o, Speed, Damage) {
 
     //Draw the Missle
     setPixmap(QPixmap(":/images/images/Missle.png"));

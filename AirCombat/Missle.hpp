@@ -12,7 +12,7 @@ public:
 
     //Constructor
     Missle() = delete;
-    Missle(Shooter *o);
+    Missle(const Shooter *o);
 
 private:
 
