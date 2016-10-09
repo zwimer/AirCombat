@@ -7,6 +7,7 @@
         <file>images/Missle.png</file>
         <file>images/FastEnemy.png</file>
         <file>images/BasicEnemyInjured.png</file>
+        <file>images/GunnerEnemy.png</file>
     </qresource>
     <qresource prefix="/sounds">
         <file>sounds/Background.mp3</file>

@@ -1,33 +1,36 @@
-#if 0
 #include "GunnerEnemy.hpp"
+#include "Turret.hpp"
+#include "Bullet.hpp"
 
 //GunnerEnemy's stats
 const uint GunnerEnemy::Speed = 10;
 const uint GunnerEnemy::Health = 10;
-const uint GunnerEnemy::ScoreValue = 8;
+const uint GunnerEnemy::ScoreValue = 12;
 
 //GunnerEnemy's size
-const uint GunnerEnemy::Width = 158;
-const uint GunnerEnemy::Height = 100;
+const uint GunnerEnemy::Width = 100;
+const uint GunnerEnemy::Height = 164;
 
 
 //Constructor
-GunnerEnemy::GunnerEnemy() : Enemy(Speed, Health) {
+GunnerEnemy::GunnerEnemy() : Enemy(Speed, Health),
+    Left(new Turret<Bullet>(this, -Width/2, Height/2, false)),
+Right(NULL) {
 
     //Draw the enemy
     setPixmap(QPixmap(":/images/images/GunnerEnemy.png"));
 }
 
-
 //To satisfy the compiler
-void GunnerEnemy::healthChanged(uint h) {}
+void GunnerEnemy::healthChanged(uint) {}
 
-//Return the enemy's width
+//Get location
+int GunnerEnemy::getX() const { return x(); }
+int GunnerEnemy::getY() const { return y(); }
+
+//Return the enemy's size
 inline uint GunnerEnemy::getWidth() const { return Width; }
-
-//Return the enemy's height
 inline uint GunnerEnemy::getHeight() const { return Height; }
 
 //Return the how many points the enemy is worth
 uint GunnerEnemy::getScoreValue() const { return ScoreValue; }
-#endif

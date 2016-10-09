@@ -15,7 +15,3 @@ void Shooter::fire(Projectile *p) {
     //Add the projectile to the scene
     theGame->theScene->addItem(p);
 }
-
-//Get the shooter's location
-//int Shooter::getX() const { return x(); }
-//int Shooter::getY() const { return y(); }

@@ -42,7 +42,6 @@ AutoMove::AutoMove(int s) : speed(scaleDown(s,s)),
     t->start(25);
 }
 
-
 //The bullet's move function
 void AutoMove::move() {
 

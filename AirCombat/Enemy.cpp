@@ -3,6 +3,8 @@
 #include "Score.hpp"
 #include "Game.hpp"
 #include "SmartScene.hpp"
+
+#include "GunnerEnemy.hpp"    //DELETE
 #include "BasicEnemy.hpp"    //DELETE
 #include "FastEnemy.hpp"    //DELETE
 
@@ -79,9 +81,11 @@ Enemy* Enemy::spawnEnemy() {
     //Create a new enemy
     Enemy *e;
 
-    //Randomize which, prefer basic
-    if (rand()%7<5) e = new BasicEnemy();    //CHANGE
-    else e = new FastEnemy();
+    //Randomize which
+    int r = rand()%11;
+    if (r<6) e = new BasicEnemy();    //CHANGE
+    else if (r<9) e = new FastEnemy();
+    else e = new GunnerEnemy();
 
     //Randomize location
     e->setPos(rand()%(Game::Width - e->getWidth()), -(int)e->getHeight());

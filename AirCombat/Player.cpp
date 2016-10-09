@@ -35,6 +35,7 @@ Player::Player(QGraphicsView *theWindow) {
 //Destructor
 Player::~Player() { delete health; }
 
+//Get the players location
 int Player::getX() const { return x(); }
 int Player::getY() const { return y(); }
 

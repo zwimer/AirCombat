@@ -1,8 +1,9 @@
-#ifdef GUNNERENEMY_H
+#ifndef GUNNERENEMY_H
 #define GUNNERENEMY_H
 
 #include "Enemy.hpp"
 #include "Shooter.hpp"
+#include "AbstractTurret.hpp"
 
 //A basic enemy
 class GunnerEnemy : public Enemy, public Shooter {
@@ -11,17 +12,25 @@ public:
     //Construtor
     GunnerEnemy();
 
+private:
+
+    //Get location
+    int getX() const;
+    int getY() const;
+
     //Return the enemy's size
     inline uint getWidth() const;
     inline uint getHeight() const;
-
-private:
 
     //Returns stats
     uint getScoreValue() const;
 
     //Redraw the enemy if needed
     void healthChanged(uint h);
+
+    //Wing turrets
+    const AbstractTurret *Left;
+    const AbstractTurret *Right;
 
     //Stats
     static const uint Speed;

@@ -22,10 +22,8 @@ BasicEnemy::BasicEnemy() : Enemy(Speed, Health) {
 void BasicEnemy::healthChanged(uint h)
 { if (h <= Health/2) setPixmap(QPixmap(":/images/images/BasicEnemyInjured.png")); }
 
-//Return the enemy's width
+//Return the enemy's size
 inline uint BasicEnemy::getWidth() const { return Width; }
-
-//Return the enemy's height
 inline uint BasicEnemy::getHeight() const { return Height; }
 
 //Return the how many points the enemy is worth

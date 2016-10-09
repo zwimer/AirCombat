@@ -27,9 +27,9 @@ public:
     //Allows the player to move
     void mouseMoved(QPointF p);
 
-
-    int getX() const ;
-    int getY() const ;
+    //Get the players location
+    int getX() const;
+    int getY() const;
 
     //Player's health
     Health *health;

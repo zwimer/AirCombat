@@ -18,10 +18,8 @@ FastEnemy::FastEnemy() : Enemy(Speed, Health) {
     setPixmap(QPixmap(":/images/images/FastEnemy.png"));
 }
 
-//Return the enemy's width
+//Return the enemy's size
 inline uint FastEnemy::getWidth() const { return Width; }
-
-//Return the enemy's height
 inline uint FastEnemy::getHeight() const { return Height; }
 
 //Return the how many points the enemy is worth
