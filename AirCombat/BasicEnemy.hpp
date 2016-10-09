@@ -10,11 +10,11 @@ public:
     //Construtor
     BasicEnemy();
 
+private:
+
     //Return the enemy's size
     inline uint getWidth() const;
     inline uint getHeight() const;
-
-private:
 
     //Returns stats
     uint getScoreValue() const;
