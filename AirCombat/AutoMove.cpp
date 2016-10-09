@@ -39,7 +39,7 @@ AutoMove::AutoMove(int s) : speed(scaleDown(s,s)),
     connect(t, SIGNAL(timeout()), this, SLOT(move()));
 
     //Have the timer call move every 25 ms
-    t->start(25);
+    t->start(30);
 }
 
 //The bullet's move function

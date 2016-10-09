@@ -25,11 +25,6 @@ public:
     //Get the size of the owner
     virtual uint getWidth() const = 0;
     virtual uint getHeight() const = 0;
-
-protected:
-
-    //Who shot
-    Shooter* Owner;
 };
 
 #endif // SHOOTER_H
