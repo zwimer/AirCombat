@@ -6,8 +6,9 @@
 #include <QGraphicsScene>
 
 //Constructor
-Projectile::Projectile(const Shooter* o, uint s, uint d)
-    : AutoMove(-(int)s), Owner(o), damage(d) {}
+//If r is true, returns a positive speed instead of a negative one
+Projectile::Projectile(const Shooter* o, uint s, uint d, bool r)
+    : AutoMove(r?s:-(int)s), Owner(o), damage(d) {}
 
 //Get the damage of the projectile
 uint Projectile::getDamage() const { return damage; }

@@ -13,8 +13,10 @@ public:
     //Delete default constructor
     Projectile()=delete;
 
-    //Takes unsigned speed and damage arguments
-    Projectile(const Shooter* o, uint s, uint d);
+    //Shooter argument is what shot the projectile
+    //Takes unsigned speed, s, and damage, d, argument
+    //Last argument is used if the projectile was shot from an enemy
+    Projectile(const Shooter* o, uint s, uint d, bool r = false);
 
     //Set up the projectile
     void setup();

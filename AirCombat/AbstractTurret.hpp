@@ -15,7 +15,7 @@ protected:
 
     //Constructors
     AbstractTurret()=delete;
-    AbstractTurret(Shooter* o, int x, int y, uint t = 0);
+    AbstractTurret(Shooter* o, int x, int y, uint t);
 
 public:
 
