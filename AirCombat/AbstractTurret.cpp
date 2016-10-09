@@ -34,7 +34,8 @@ void AbstractTurret::setFireRate(uint t) {
 }
 
 //Return the turret's location
-int AbstractTurret::getX() const { return Owner->getX()+offsetX; }
+#include<QDebug>
+int AbstractTurret::getX() const { qDebug() << "GX: " << Owner->getX(); qDebug() << "OX:: " << offsetX; return Owner->getX()+offsetX; }
 int AbstractTurret::getY() const { return Owner->getY()+offsetY; }
 
 //Turrets have no size... at least not yet

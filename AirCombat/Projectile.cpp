@@ -28,6 +28,12 @@ void Projectile::afterTurn() {
 //The projectile's beforeTurn function
 bool Projectile::beforeTurn() { return true; }
 
+#include<QDebug>
 //Set the Bullet's position
 void Projectile::setup()
-{ setPos(Owner->getX()+Owner->getWidth()/2-getWidth()/2,Owner->getY()); }
+{
+
+    qDebug() << "X: " << Owner->getX();
+    qDebug() << "Y: " << Owner->getY();
+
+    setPos(Owner->getX()+Owner->getWidth()/2-getWidth()/2,Owner->getY()); }

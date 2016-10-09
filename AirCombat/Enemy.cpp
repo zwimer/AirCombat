@@ -80,12 +80,12 @@ Enemy* Enemy::spawnEnemy() {
 
     //Create a new enemy
     Enemy *e;
-
+/*
     //Randomize which
     int r = rand()%11;
     if (r<6) e = new BasicEnemy();    //CHANGE
     else if (r<9) e = new FastEnemy();
-    else e = new GunnerEnemy();
+    else*/ e = new GunnerEnemy();
 
     //Randomize location
     e->setPos(rand()%(Game::Width - e->getWidth()), -(int)e->getHeight());
@@ -107,7 +107,7 @@ bool Enemy::beforeTurn() {
             theGame->GameOver();
 
     //Check if the plane was hit
-    return checkHit();
+    return true;//checkHit();
 }
 
 //Call after every move
@@ -125,5 +125,5 @@ void Enemy::afterTurn() {
     }
 
     //Check if the plane was hit
-    checkHit();
+    //checkHit();
 }

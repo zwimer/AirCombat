@@ -41,7 +41,7 @@ Game::Game() {
     //Link enemy spawning to a timer
     QTimer *t = new QTimer();
     QObject::connect(t, SIGNAL(timeout()), this, SLOT(spawn()));
-    t->start(900);
+    t->start(2000);
 
     //Play background music
     theMusic = new QMediaPlayer();
@@ -53,7 +53,7 @@ Game::Game() {
                      this, SLOT(restartMusic()));
 
 	//Make the scene visible
-	theWindow->show();
+    theWindow->show();
 }
 
 //Destructor

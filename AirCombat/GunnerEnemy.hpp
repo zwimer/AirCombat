@@ -12,6 +12,9 @@ public:
     //Construtor
     GunnerEnemy();
 
+    //Deconstructor
+    ~GunnerEnemy();
+
 private:
 
     //Get location
