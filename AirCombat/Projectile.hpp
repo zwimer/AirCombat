@@ -40,7 +40,7 @@ private:
     const uint damage;
 
     //AutoMove functions
-    void afterTurn();
+    void afterMove();
     bool beforeTurn();
 };
 

@@ -1,19 +1,15 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include <Turret.hpp>
-
 #include "Health.hpp"
+#include "Shooter.hpp"
+#include "AbstractTurret.hpp"
+
 #include <QObject>
 #include <QPointF>
 #include <QKeyEvent>
 #include <QGraphicsView>
 #include <QGraphicsRectItem>
-
-#include "Shooter.hpp"
-
-
-#include "Bullet.hpp"           //DELETE;
 
 //The player
 class Player : public Shooter, public QGraphicsPixmapItem {
@@ -50,9 +46,6 @@ private:
     //Size
     static const int pixelWidth;
     static const int pixelHeight;
-
-    //Move Speed
-    static const int MoveSpeed;
 };
 
 #endif

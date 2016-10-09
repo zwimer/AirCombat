@@ -26,11 +26,12 @@ protected:
     //by SpeedReductionFactor. However, other AutoMoves
     //may, so keep this in mind while implementing these
 
-    //To be implemented by derived classes
-    virtual void afterTurn()=0;
-
+    //This will be called before every turn!
     //Returns false if the turn should be skipped
     virtual bool beforeTurn()=0;
+
+    //This will be called after every move, not turn!
+    virtual void afterMove()=0;
 
 private:
 

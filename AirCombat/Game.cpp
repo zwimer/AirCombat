@@ -41,7 +41,7 @@ Game::Game() {
     //Link enemy spawning to a timer
     QTimer *t = new QTimer();
     QObject::connect(t, SIGNAL(timeout()), this, SLOT(spawn()));
-    t->start(2000);
+    t->start(1000);
 
     //Play background music
     theMusic = new QMediaPlayer();

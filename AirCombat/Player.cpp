@@ -1,9 +1,7 @@
 #include "Player.hpp"
+#include "Turret.hpp"
 #include "Missle.hpp"
 #include "Game.hpp"
-
-//Player's move speed
-const int Player::MoveSpeed = 1;
 
 //Set player's default health
 const int Player::DefaultHealth = 3;

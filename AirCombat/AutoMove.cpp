@@ -53,8 +53,8 @@ void AutoMove::move() {
     if ((TurnNumber++) >= MoveTurn) {
         setPos(x(),y()+speed);
         TurnNumber = 1;
-    }
 
-    //After move
-    afterTurn();
+        //After move
+        afterMove();
+    }
 }

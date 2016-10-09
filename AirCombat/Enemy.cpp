@@ -114,7 +114,7 @@ bool Enemy::beforeTurn() {
 }
 
 //Call after every move
-void Enemy::afterTurn() {
+void Enemy::afterMove() {
 
     //If the Enemy is off the screen, then delete it
     if (pos().y() > scene()->height()) {

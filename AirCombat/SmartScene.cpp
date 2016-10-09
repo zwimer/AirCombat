@@ -1,5 +1,6 @@
 #include "SmartScene.hpp"
 #include "Player.hpp"
+#include "Bullet.hpp"
 #include "Game.hpp"
 
 //Constructor

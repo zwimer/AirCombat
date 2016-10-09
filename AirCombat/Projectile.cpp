@@ -18,10 +18,10 @@ uint Projectile::getDamage() const { return damage; }
 bool Projectile::hurtsEnemy() const { return !reverse; }
 
 //The projectile's afterTurn function
-void Projectile::afterTurn() {
+void Projectile::afterMove() {
 
     //If the Projectile is off the screen, then delete it
-    if (pos().y() < -(int)getHeight()) {
+    if (pos().y() < -(int)getHeight() || pos().y() >= Game::Height ) {
 
         //Remove this item
         theGame->theScene->removeItem(this);
@@ -32,20 +32,12 @@ void Projectile::afterTurn() {
 //The projectile's beforeTurn function
 bool Projectile::beforeTurn() { return true; }
 
-#include<QDebug>
 //Setup projectile
 void Projectile::setup()
 {
 
-    qDebug() << "X: " << Owner->getX();
-    qDebug() << "Y: " << Owner->getY();
-
-    //If the projecitle is normal
-    if (!reverse) {
-
-        //Set the starting position
-        setPos(Owner->getX()+Owner->getWidth()/2-getWidth()/2,Owner->getY());
-    }
+    //If the projecitle is normal, set the starting position
+    if (!reverse) setPos(Owner->getX()+Owner->getWidth()/2-getWidth()/2,Owner->getY());
 
     //If the projectile is travelling in reverse
     else {
