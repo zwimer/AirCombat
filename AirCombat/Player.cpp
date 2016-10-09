@@ -35,6 +35,9 @@ Player::Player(QGraphicsView *theWindow) {
 //Destructor
 Player::~Player() { delete health; }
 
+int Player::getX() const { return x(); }
+int Player::getY() const { return y(); }
+
 //Returns the player's size
 uint Player::getWidth() const { return Player::pixelWidth; }
 uint Player::getHeight() const { return Player::pixelHeight; }

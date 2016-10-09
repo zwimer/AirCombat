@@ -29,7 +29,8 @@ SOURCES += main.cpp \
     Missle.cpp \
     FastEnemy.cpp \
     SmartScene.cpp \
-    AbstractTurret.cpp
+    AbstractTurret.cpp \
+    GunnerEnemy.cpp
 
 HEADERS  += \
     Bullet.hpp \
@@ -49,7 +50,8 @@ HEADERS  += \
     FastEnemy.hpp \
     SmartScene.hpp \
     AbstractTurret.hpp \
-    Turret.hpp
+    Turret.hpp \
+    GunnerEnemy.hpp
 
 FORMS    +=
 

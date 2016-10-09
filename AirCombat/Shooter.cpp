@@ -17,5 +17,5 @@ void Shooter::fire(Projectile *p) {
 }
 
 //Get the shooter's location
-int Shooter::getX() const { return x(); }
-int Shooter::getY() const { return y(); }
+//int Shooter::getX() const { return x(); }
+//int Shooter::getY() const { return y(); }

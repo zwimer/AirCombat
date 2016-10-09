@@ -2,13 +2,14 @@
 #define SHOOTER_H
 
 #include "main.hpp"
+
 #include <QGraphicsPixmapItem>
 
 //Forward declerations
 class Projectile;
 
 //Allows sub-classes to shoot projectiles
-class Shooter : public QGraphicsPixmapItem {
+class Shooter {
 public:
 
     //Constructor
@@ -18,8 +19,8 @@ public:
     void fire(Projectile *p);
 
     //Get the location of the shooter
-    virtual int getX() const;
-    virtual int getY() const;
+    virtual int getX() const = 0;
+    virtual int getY() const = 0;
 
     //Get the size of the owner
     virtual uint getWidth() const = 0;

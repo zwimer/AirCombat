@@ -16,7 +16,7 @@
 #include "Bullet.hpp"           //DELETE;
 
 //The player
-class Player : public Shooter {
+class Player : public Shooter, public QGraphicsPixmapItem {
 public:
 
     //Constructor
@@ -26,6 +26,10 @@ public:
 
     //Allows the player to move
     void mouseMoved(QPointF p);
+
+
+    int getX() const ;
+    int getY() const ;
 
     //Player's health
     Health *health;
