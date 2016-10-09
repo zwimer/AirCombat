@@ -14,8 +14,8 @@ const uint GunnerEnemy::Height = 164;
 #include<QDebug>
 //Constructor
 GunnerEnemy::GunnerEnemy() : Enemy(Speed, Health),
-    Left(new Turret<Bullet>(this, 0*-(int)Width/2, 0*Height/2, 1000, true)),
-Right(NULL) {
+    Left(new Turret<Bullet>(this, 0, 0, 1000, true)),
+    Right(new Turret<Bullet>(this, Width, 0, 1000, true)) {
 
     //Draw the enemy
     setPixmap(QPixmap(":/images/images/GunnerEnemy.png"));

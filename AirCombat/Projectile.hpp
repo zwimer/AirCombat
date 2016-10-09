@@ -24,6 +24,10 @@ public:
     //Returns the damage done if an enemy is hit
     uint getDamage() const;
 
+    //Returns true if the projectile hurts enemies
+    //Returns false if hte projectile hurts the player
+    bool hurtsEnemy() const;
+
 private:
 
     //Get the projectile's size;
@@ -32,6 +36,7 @@ private:
 
     //Representation
     const Shooter* Owner;
+    const bool reverse;
     const uint damage;
 
     //AutoMove functions
