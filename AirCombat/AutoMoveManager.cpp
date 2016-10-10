@@ -22,22 +22,21 @@ void AutoMoveManager::start() {
 //Destructor
 AutoMoveManager::~AutoMoveManager() { delete t; }
 
-#include<QDebug>
 //Add new AutoMove to the manager
-void AutoMoveManager::add(AutoMove *w) { qDebug() << "Added";Moving.insert(w); }
+void AutoMoveManager::add(AutoMove *w) { Moving.insert(w); }
 
 //Add old AutoMove fromthe manager
-void AutoMoveManager::remove(AutoMove *w) {  qDebug() << "Removed";Moving.erase(w); }
+void AutoMoveManager::remove(AutoMove *w) { Moving.erase(w); delete w; }
 
 //Move all Moving
 void AutoMoveManager::moveAll() {
 
     //Move each AutoMove, and record which were deleted
     std::vector<AutoMove*> toRemove;
-    for(AutoMove* i : Moving) if (!i->move()) {
-        toRemove.push_back(i); delete i;
-    }
+    for(AutoMove* i : Moving)
+        if (!i->move())
+            toRemove.push_back(i);
 
-    //Remove each deleted AutoMove
-    for(AutoMove* i: toRemove) Moving.erase(i);
+    //Delete each deleted AutoMove
+    for(AutoMove* i: toRemove) Moving.remove(i);
 }

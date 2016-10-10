@@ -24,6 +24,66 @@ bool Enemy::decreaseHealth(uint d)
 //Default do nothing
 void Enemy::healthChanged(uint) {}
 
+//Called by game to spawn an enemy
+Enemy* Enemy::spawnEnemy() {
+
+    //Create a new enemy
+    Enemy *e;
+
+    //Randomize which
+    int r = rand()%11;
+    if (r<6) e = new BasicEnemy();    //CHANGE
+    else if (r<9) e = new FastEnemy();
+    else e = new GunnerEnemy();
+
+    //Randomize location
+    e->setPos(rand()%(Game::Width - e->getWidth()), -(int)e->getHeight());
+
+    //Possibly override random location
+    e->spawn();
+
+    //Return the new enemy
+    return e;
+}
+
+#include <QDebug>
+//Call before every move
+bool Enemy::beforeTurn() {
+
+    qDebug() << "CItems";
+
+    //If the enemy collides with the player, game over
+    QList<QGraphicsItem *> items = collidingItems();
+    for(int i = 0; i < items.size(); i++)
+        if (dynamic_cast<const Player *>(items[i]) != NULL)
+            theGame->GameOver();
+
+    qDebug() << "CheckHit";
+
+    //Check if the plane was hit
+    return checkHit();
+}
+
+//Call after every move
+bool Enemy::afterMove() {
+
+    //If the Enemy is off the screen, then delete it
+    if (pos().y() > scene()->height()) {
+
+        //Decrement health
+        theGame->P1->health->decrease(1);
+
+        //Remove this item
+        scene()->removeItem(this);
+
+        //This item needs to be deleted
+        return false;
+    }
+
+    //Check if the plane was hit
+    return checkHit();
+}
+
 //Check if the enemy was hit
 //If so, remove whatever you need
 bool Enemy::checkHit() {
@@ -54,11 +114,20 @@ bool Enemy::checkHit() {
             toDelete.push_back(items[i]);
         }
 
-    //Delete all the colliding projectiles
-    for(int i = 0; i < (int)toDelete.size(); i++) {
-        theGame->theScene->removeItem(toDelete[i]);
-        delete toDelete[i];
-    }
+//    //Delete all the colliding projectiles
+//    for(int i = 0; i < (int)toDelete.size(); i++) {
+//        theGame->theScene->removeItem(toDelete[i]);
+//        delete toDelete[i];
+//    }
+            //Delete all the colliding projectiles
+        qDebug() << "Rem";
+        for(int i = 0; i < (int)toDelete.size(); i++)
+                theGame->theScene->removeItem(toDelete[i]);
+
+qDebug() << "DelP";
+            for(int i = 0; i < (int)toDelete.size(); i++)
+            {}//delete toDelete[i];
+
 
     //Update the enemy sub-class
     if (toDelete.size()) this->healthChanged(health);
@@ -71,61 +140,7 @@ bool Enemy::checkHit() {
 
     //Delete this enemy
     scene()->removeItem(this);
-    delete this;
 
-    //The enemy is dead
+    //The enemy needs to be deleted
     return false;
-}
-
-//Called by game to spawn an enemy
-Enemy* Enemy::spawnEnemy() {
-
-    //Create a new enemy
-    Enemy *e;
-
-    //Randomize which
-    int r = rand()%11;
-    if (r<6) e = new BasicEnemy();    //CHANGE
-    else if (r<9) e = new FastEnemy();
-    else e = new GunnerEnemy();
-
-    //Randomize location
-    e->setPos(rand()%(Game::Width - e->getWidth()), -(int)e->getHeight());
-
-    //Possibly override random location
-    e->spawn();
-
-    //Return the new enemy
-    return e;
-}
-
-//Call before every move
-bool Enemy::beforeTurn() {
-
-    //If the enemy collides with the player, game over
-    QList<QGraphicsItem *> items = collidingItems();
-    for(int i = 0; i < items.size(); i++)
-        if (dynamic_cast<const Player *>(items[i]) != NULL)
-            theGame->GameOver();
-
-    //Check if the plane was hit
-    return checkHit();
-}
-
-//Call after every move
-bool Enemy::afterMove() {
-
-    //If the Enemy is off the screen, then delete it
-    if (pos().y() > scene()->height()) {
-
-        //Decrement health
-        theGame->P1->health->decrease(1);
-
-        //Remove this item
-        scene()->removeItem(this);
-        delete this;
-    }
-
-    //Check if the plane was hit
-    return checkHit();
 }

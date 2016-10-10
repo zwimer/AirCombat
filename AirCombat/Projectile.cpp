@@ -17,26 +17,26 @@ uint Projectile::getDamage() const { return damage; }
 //Returns false if hte projectile hurts the player
 bool Projectile::hurtsEnemy() const { return !reverse; }
 
-#include<QDebug>
 //The projectile's afterTurn function
 bool Projectile::afterMove() {
 
     //If the Projectile is off the screen, then delete it
     if (pos().y() < -(int)getHeight() || pos().y() >= Game::Height ) {
 
-        qDebug() << "Time to die";
         //Remove this item
         theGame->theScene->removeItem(this);
-        qDebug() << "Done with afterMove";
 
+        //This item needs to be deleted
         return false;
     }
 
+    //Nothing happened
     return true;
 }
 
+#include<QDebug>
 //The projectile's beforeTurn function
-bool Projectile::beforeTurn() { return true; }
+bool Projectile::beforeTurn() { qDebug() << "Proj, true"; return true; }
 
 //Setup projectile
 void Projectile::setup()

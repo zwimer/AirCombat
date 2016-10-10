@@ -51,7 +51,7 @@ Game::Game() {
     //Link enemy spawning to a timer
     QTimer *t = new QTimer();
     QObject::connect(t, SIGNAL(timeout()), this, SLOT(spawn()));
-    //t->start(1000);
+    t->start(1000);
 
     //Start moving all AutoMoves
     AutoMove::start();
