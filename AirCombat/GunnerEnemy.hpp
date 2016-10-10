@@ -39,6 +39,7 @@ private:
     static const uint Speed;
     static const uint Health;
     static const uint ScoreValue;
+    static const uint ReloadTime;
 
     //Size of enemy
     static const uint Width;

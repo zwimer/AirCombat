@@ -68,7 +68,6 @@ void AutoMoveManager::moveAll() {
                 toDelete.push_back(p);
             }
 
-
     //Delete each deleted AutoMove
     for(AutoMove* i: toDelete)
     { Moving.erase(i); delete i; }

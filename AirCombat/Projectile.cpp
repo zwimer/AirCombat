@@ -21,7 +21,8 @@ bool Projectile::hurtsEnemy() const { return !reverse; }
 void Projectile::afterMove() {
 
     //If the Projectile is off the screen, then delete it
-    if (pos().y() < -(int)getHeight() || pos().y() >= Game::Height ) {
+    if ((!reverse && pos().y() < -(int)getHeight()) ||
+            (reverse && pos().y() >= Game::Height)) {
 
         //Remove this item
         theGame->theScene->removeItem(this);

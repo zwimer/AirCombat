@@ -5,7 +5,8 @@
 //GunnerEnemy's stats
 const uint GunnerEnemy::Speed = 10;
 const uint GunnerEnemy::Health = 10;
-const uint GunnerEnemy::ScoreValue = 12;
+const uint GunnerEnemy::ScoreValue = 20;
+const uint GunnerEnemy::ReloadTime = 2000;
 
 //GunnerEnemy's size
 const uint GunnerEnemy::Width = 100;
@@ -14,8 +15,8 @@ const uint GunnerEnemy::Height = 164;
 
 //Constructor
 GunnerEnemy::GunnerEnemy() : Enemy(Speed, Health),
-    Left(new Turret<Bullet>(this, 0, 0, 1000, true)),
-    Right(new Turret<Bullet>(this, Width, 0, 1000, true)) {
+    Left(new Turret<Bullet>(this, 0, 0, ReloadTime, true)),
+    Right(new Turret<Bullet>(this, Width, 0, ReloadTime, true)) {
 
     //Draw the enemy
     setPixmap(QPixmap(":/images/images/GunnerEnemy.png"));
