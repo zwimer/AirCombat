@@ -25,5 +25,5 @@ void Health::decrease(unsigned int x) {
     setPlainText(QString("Health: ") + QString::number(health));
 
     //If you are out of health, game over
-    if (!health) theGame->GameOver();
+    if (health <= 0) theGame->GameOver();
 }

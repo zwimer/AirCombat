@@ -46,18 +46,8 @@ Enemy* Enemy::spawnEnemy() {
     return e;
 }
 
-//Call before every move
-bool Enemy::beforeTurn() {
-
-    //If the enemy collides with the player, game over
-    QList<QGraphicsItem *> items = collidingItems();
-    for(int i = 0; i < items.size(); i++)
-        if (dynamic_cast<const Player *>(items[i]) != NULL)
-            theGame->GameOver();
-
-    //Check if the plane was hit
-    return checkHit();
-}
+//Check if the enemy was hit before every move
+bool Enemy::beforeTurn() { return checkHit(); }
 
 //Call after every move
 void Enemy::afterMove() {
@@ -66,7 +56,7 @@ void Enemy::afterMove() {
     if (pos().y() > scene()->height()) {
 
         //Decrement health
-        theGame->P1->health->decrease(1);
+        theGame->P1->health->decrease(5);
 
         //Remove this item
         scene()->removeItem(this);

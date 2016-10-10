@@ -4,7 +4,7 @@
 #include "Game.hpp"
 
 //Set player's default health
-const int Player::DefaultHealth = 3;
+const int Player::DefaultHealth = 100;
 
 //Set player's size
 const int Player::pixelWidth = 128;
