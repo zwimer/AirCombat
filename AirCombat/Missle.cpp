@@ -1,7 +1,5 @@
 #include "Missle.hpp"
 
-#include <SoundManager.hpp>
-
 //Define the Missle's stats
 const uint Missle::Speed = 160;
 const uint Missle::Damage = 80;
@@ -17,7 +15,7 @@ Missle::Missle(const Shooter *o, bool r) : Projectile(o, Speed, Damage,r ) {
     setPixmap(QPixmap(":/images/images/Missle.png"));
 
     //Play the Missle sound
-    SoundManager::newSound("qrc:/sounds/sounds/Missle.mp3");
+    playSound("qrc:/sounds/sounds/Missle.mp3");
 }
 
 //Return the size of the Missle

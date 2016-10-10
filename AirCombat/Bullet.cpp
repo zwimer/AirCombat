@@ -1,7 +1,5 @@
 #include "Bullet.hpp"
 
-#include <SoundManager.hpp>
-
 //Define the Bullet's stats
 const uint Bullet::Speed = 80;
 const uint Bullet::Damage = 20;
@@ -17,7 +15,7 @@ Bullet::Bullet(const Shooter *o, bool r) : Projectile(o, Speed, Damage, r) {
     setPixmap(QPixmap(":/images/images/Bullet.png"));
 
     //Play the Bullet sound
-    SoundManager::newSound("qrc:/sounds/sounds/Bullet.mp3");
+    playSound("qrc:/sounds/sounds/Bullet.mp3");
 }
 
 //Return the size of the Bullet

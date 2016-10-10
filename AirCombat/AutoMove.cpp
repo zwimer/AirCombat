@@ -41,9 +41,6 @@ AutoMove::AutoMove(int s) : speed(scaleDown(s,s)),
     Mgr->add(this);
 }
 
-//Destructor
-AutoMove::~AutoMove() {}// Mgr->remove(this); }
-
 //Have the manager delete this
 void AutoMove::deleteMe() { Mgr->remove(this); }
 
@@ -66,3 +63,6 @@ void AutoMove::move() {
         afterMove();
     }
 }
+
+//Play a sound
+void AutoMove::playSound(const char *f) { Mgr->playSound(f); }

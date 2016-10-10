@@ -1,4 +1,5 @@
 #include "AutoMoveManager.hpp"
+#include "SoundManager.hpp"
 #include "AutoMove.hpp"
 
 #include <vector>
@@ -28,6 +29,9 @@ void AutoMoveManager::add(AutoMove *w) { Moving.insert(w); }
 //Add old AutoMove fromthe manager
 void AutoMoveManager::remove(AutoMove *w) { toDelete.push_back(w); }
 
+//Play a sound
+void AutoMoveManager::playSound(const char *f) { toPlay.insert(f); }
+
 //Move all Moving
 void AutoMoveManager::moveAll() {
 
@@ -38,6 +42,10 @@ void AutoMoveManager::moveAll() {
     for(AutoMove* i: toDelete)
     { Moving.erase(i); delete i; }
 
-    //Clear the deletion list
-    toDelete.clear();
+    //Play all new sounds
+    for(const char * i : toPlay)
+        SoundManager::newSound(i);
+
+    //Clear todo lists
+    toDelete.clear(); toPlay.clear();
 }

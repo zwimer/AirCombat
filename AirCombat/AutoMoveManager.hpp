@@ -30,6 +30,9 @@ public:
     //Remove AutoMove
     void remove(AutoMove* w);
 
+    //Play a new sound
+    void playSound(const char *f);
+
 private slots:
 
     //Move all Moving
@@ -40,6 +43,7 @@ private:
     //Representation
     QTimer *t;
     std::set<AutoMove*> Moving;
+    std::set<const char *> toPlay;
     std::vector<AutoMove*>toDelete;
 };
 

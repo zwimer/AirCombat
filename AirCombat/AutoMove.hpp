@@ -15,11 +15,11 @@ public:
     AutoMove()=delete;
     AutoMove(int s);
 
-    //Destructor
-    ~AutoMove();
-
     //Move
     void move();
+
+    //Play a sound
+    void playSound(const char *f);
 
     //Start moving all AutoMoves
     static void start();
