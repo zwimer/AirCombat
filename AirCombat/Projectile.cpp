@@ -31,9 +31,8 @@ void Projectile::afterMove() {
     }
 }
 
-#include<QDebug>
 //The projectile's beforeTurn function
-bool Projectile::beforeTurn() { qDebug() << "Proj, true"; return true; }
+bool Projectile::beforeTurn() { return true; }
 
 //Setup projectile
 void Projectile::setup()
