@@ -17,7 +17,7 @@ public:
 protected:
 
     //What to do each turn
-    bool afterMove();
+    void afterMove();
     bool beforeTurn();
 
 public slots:

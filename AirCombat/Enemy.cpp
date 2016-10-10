@@ -46,11 +46,8 @@ Enemy* Enemy::spawnEnemy() {
     return e;
 }
 
-#include <QDebug>
 //Call before every move
 bool Enemy::beforeTurn() {
-
-    qDebug() << "CItems";
 
     //If the enemy collides with the player, game over
     QList<QGraphicsItem *> items = collidingItems();
@@ -58,14 +55,12 @@ bool Enemy::beforeTurn() {
         if (dynamic_cast<const Player *>(items[i]) != NULL)
             theGame->GameOver();
 
-    qDebug() << "CheckHit";
-
     //Check if the plane was hit
     return checkHit();
 }
 
 //Call after every move
-bool Enemy::afterMove() {
+void Enemy::afterMove() {
 
     //If the Enemy is off the screen, then delete it
     if (pos().y() > scene()->height()) {
@@ -77,11 +72,11 @@ bool Enemy::afterMove() {
         scene()->removeItem(this);
 
         //This item needs to be deleted
-        return false;
+        deleteMe();
     }
 
     //Check if the plane was hit
-    return checkHit();
+    else checkHit();
 }
 
 //Check if the enemy was hit
@@ -95,7 +90,7 @@ bool Enemy::checkHit() {
     Projectile *p;
 
     //A vector of items to delete
-    std::vector<QGraphicsItem*> toDelete;
+    std::vector<QGraphicsItem*> toRemove;
 
     //If projectile collides with enemy, destroy both
     QList<QGraphicsItem*> items = collidingItems();
@@ -111,26 +106,16 @@ bool Enemy::checkHit() {
             isDead = decreaseHealth(p->getDamage());
 
             //Note that this projectile should be deleted
-            toDelete.push_back(items[i]);
+            toRemove.push_back(items[i]);
+            p->deleteMe();
         }
 
-//    //Delete all the colliding projectiles
-//    for(int i = 0; i < (int)toDelete.size(); i++) {
-//        theGame->theScene->removeItem(toDelete[i]);
-//        delete toDelete[i];
-//    }
-            //Delete all the colliding projectiles
-        qDebug() << "Rem";
-        for(int i = 0; i < (int)toDelete.size(); i++)
-                theGame->theScene->removeItem(toDelete[i]);
-
-qDebug() << "DelP";
-            for(int i = 0; i < (int)toDelete.size(); i++)
-            {}//delete toDelete[i];
-
+    //Delete all the colliding projectiles
+    for(int i = 0; i < (int)toRemove.size(); i++)
+        theGame->theScene->removeItem(toRemove[i]);
 
     //Update the enemy sub-class
-    if (toDelete.size()) this->healthChanged(health);
+    if (toRemove.size()) this->healthChanged(health);
 
     //If the enemy is still alive, return true
     if (!isDead) return true;
@@ -140,7 +125,8 @@ qDebug() << "DelP";
 
     //Delete this enemy
     scene()->removeItem(this);
+    deleteMe();
 
-    //The enemy needs to be deleted
+    //Note the enemy's death
     return false;
 }

@@ -19,7 +19,7 @@ public:
     ~AutoMove();
 
     //Move
-    bool move();
+    void move();
 
     //Start moving all AutoMoves
     static void start();
@@ -32,12 +32,14 @@ protected:
     //may, so keep this in mind while implementing these
 
     //This will be called before every turn!
-    //Returns false if the AutoMove should destruct
+    //Returns false if the turn should be skipped
     virtual bool beforeTurn()=0;
 
     //This will be called after every move, not turn!
-    //Returns false if the AutoMove should destruct
-    virtual bool afterMove()=0;
+    virtual void afterMove()=0;
+
+    //Call instead of delete this
+    void deleteMe();
 
 private:
 

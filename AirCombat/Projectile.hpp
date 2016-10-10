@@ -5,6 +5,7 @@
 
 //Forward declarations
 class Shooter;
+class Enemy;
 
 //A class for projectiles
 class Projectile: public AutoMove {
@@ -28,6 +29,9 @@ public:
     //Returns false if hte projectile hurts the player
     bool hurtsEnemy() const;
 
+    //Allow enemy's to destroy projectiles
+    friend class Enemy;
+
 private:
 
     //Get the projectile's size;
@@ -40,7 +44,7 @@ private:
     const uint damage;
 
     //AutoMove functions
-    bool afterMove();
+    void afterMove();
     bool beforeTurn();
 };
 

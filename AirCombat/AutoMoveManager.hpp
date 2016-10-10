@@ -1,7 +1,8 @@
 #ifndef AUTOMOVEMANAGER_H
 #define AUTOMOVEMANAGER_H
 
-#include<Set>
+#include<set>
+#include<vector>
 
 #include<QTimer>
 #include<QObject>
@@ -39,6 +40,7 @@ private:
     //Representation
     QTimer *t;
     std::set<AutoMove*> Moving;
+    std::vector<AutoMove*>toDelete;
 };
 
 #endif // AUTOMOVEMANAGER_H

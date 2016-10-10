@@ -26,17 +26,18 @@ AutoMoveManager::~AutoMoveManager() { delete t; }
 void AutoMoveManager::add(AutoMove *w) { Moving.insert(w); }
 
 //Add old AutoMove fromthe manager
-void AutoMoveManager::remove(AutoMove *w) { Moving.erase(w); delete w; }
+void AutoMoveManager::remove(AutoMove *w) { toDelete.push_back(w); }
 
 //Move all Moving
 void AutoMoveManager::moveAll() {
 
-    //Move each AutoMove, and record which were deleted
-    std::vector<AutoMove*> toRemove;
-    for(AutoMove* i : Moving)
-        if (!i->move())
-            toRemove.push_back(i);
+    //Move each AutoMove
+    for(AutoMove* i : Moving) i->move();
 
     //Delete each deleted AutoMove
-    for(AutoMove* i: toRemove) Moving.remove(i);
+    for(AutoMove* i: toDelete)
+    { Moving.erase(i); delete i; }
+
+    //Clear the deletion list
+    toDelete.clear();
 }

@@ -18,7 +18,7 @@ uint Projectile::getDamage() const { return damage; }
 bool Projectile::hurtsEnemy() const { return !reverse; }
 
 //The projectile's afterTurn function
-bool Projectile::afterMove() {
+void Projectile::afterMove() {
 
     //If the Projectile is off the screen, then delete it
     if (pos().y() < -(int)getHeight() || pos().y() >= Game::Height ) {
@@ -27,11 +27,8 @@ bool Projectile::afterMove() {
         theGame->theScene->removeItem(this);
 
         //This item needs to be deleted
-        return false;
+        deleteMe();
     }
-
-    //Nothing happened
-    return true;
 }
 
 #include<QDebug>

@@ -44,15 +44,17 @@ AutoMove::AutoMove(int s) : speed(scaleDown(s,s)),
 //Destructor
 AutoMove::~AutoMove() {}// Mgr->remove(this); }
 
+//Have the manager delete this
+void AutoMove::deleteMe() { Mgr->remove(this); }
 
 //Start moving all AutoMoves
 void AutoMove::start() { Mgr->start(); }
 
 //The move function
-bool AutoMove::move() {
+void AutoMove::move() {
 
     //Before move
-    if (!beforeTurn()) return false;
+    if (!beforeTurn()) return;
 
     //If the item is ready to move
     //Then move and reset turn number
@@ -61,9 +63,6 @@ bool AutoMove::move() {
         TurnNumber = 1;
 
         //After move
-        return afterMove();
+        afterMove();
     }
-
-    //This object should still exit
-    return true;
 }
