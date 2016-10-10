@@ -7,6 +7,7 @@
 #include "GunnerEnemy.hpp"    //DELETE
 #include "BasicEnemy.hpp"    //DELETE
 #include "FastEnemy.hpp"    //DELETE
+#include "BossEnemy.hpp"    //DELETE
 
 #include <vector>
 #include <stdlib.h>
@@ -31,10 +32,11 @@ Enemy* Enemy::spawnEnemy() {
     Enemy *e;
 
     //Randomize which
-    int r = rand()%11;
-    if (r<6) e = new BasicEnemy();    //CHANGE
-    else if (r<9) e = new FastEnemy();
-    else e = new GunnerEnemy();
+    int r = rand()%20;
+    if (r<11) e = new BasicEnemy();           //CHANGE
+    else if (r<15) e = new FastEnemy();
+    else if (r<18) e = new GunnerEnemy();
+    else e = new BossEnemy();
 
     //Randomize location
     e->setPos(rand()%(Game::Width - e->getWidth()), -(int)e->getHeight());

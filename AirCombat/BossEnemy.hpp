@@ -1,19 +1,19 @@
-#ifndef GUNNERENEMY_H
-#define GUNNERENEMY_H
+#ifndef BOSSENEMY_H
+#define BOSSENEMY_H
 
 #include "Enemy.hpp"
 #include "Shooter.hpp"
 #include "AbstractTurret.hpp"
 
-//An enemy that shoots back
-class GunnerEnemy : public Enemy, public Shooter {
+//A dangerous enemy
+class BossEnemy : public Enemy, public Shooter {
 public:
 
     //Construtor
-    GunnerEnemy();
+    BossEnemy();
 
     //Deconstructor
-    ~GunnerEnemy();
+    ~BossEnemy();
 
 private:
 
@@ -46,4 +46,4 @@ private:
     static const uint Height;
 };
 
-#endif // GUNNERENEMY_H
+#endif // BossENEMY_H

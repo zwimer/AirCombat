@@ -3,7 +3,7 @@
 
 #include "Enemy.hpp"
 
-//A basic enemy
+//A fast enemy
 class FastEnemy : public Enemy {
 public:
 
