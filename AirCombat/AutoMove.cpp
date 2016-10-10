@@ -1,13 +1,16 @@
 #include "AutoMove.hpp"
+#include "AutoMoveManager.hpp"
 #include "main.hpp"
 
 #include "math.h"
 
-#include <QTimer>
-
 //Constant speed reduction faster.
 //This allows speed precision to be increased
 const int AutoMove::SpeedReductionFactor = 10;
+
+//Create the AutoMoveManager
+AutoMoveManager * AutoMove::Mgr = new AutoMoveManager();
+
 
 //A small function that scales down what
 //by the gcd of s and SpeedReductionFactor
@@ -34,19 +37,22 @@ AutoMove::AutoMove(int s) : speed(scaleDown(s,s)),
     //First turn
     TurnNumber = 1;
 
-    //Connect the move function to a timer
-    QTimer *t = new QTimer();
-    connect(t, SIGNAL(timeout()), this, SLOT(move()));
-
-    //Have the timer call move every 25 ms
-    t->start(30);
+    //Add this to the manager
+    Mgr->add(this);
 }
 
-//The bullet's move function
-void AutoMove::move() {
+//Destructor
+AutoMove::~AutoMove() {}// Mgr->remove(this); }
+
+
+//Start moving all AutoMoves
+void AutoMove::start() { Mgr->start(); }
+
+//The move function
+bool AutoMove::move() {
 
     //Before move
-    if (!beforeTurn()) return;
+    if (!beforeTurn()) return false;
 
     //If the item is ready to move
     //Then move and reset turn number
@@ -55,6 +61,9 @@ void AutoMove::move() {
         TurnNumber = 1;
 
         //After move
-        afterMove();
+        return afterMove();
     }
+
+    //This object should still exit
+    return true;
 }

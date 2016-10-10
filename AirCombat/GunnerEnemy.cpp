@@ -11,7 +11,7 @@ const uint GunnerEnemy::ScoreValue = 12;
 const uint GunnerEnemy::Width = 100;
 const uint GunnerEnemy::Height = 164;
 
-#include<QDebug>
+
 //Constructor
 GunnerEnemy::GunnerEnemy() : Enemy(Speed, Health),
     Left(new Turret<Bullet>(this, 0, 0, 1000, true)),

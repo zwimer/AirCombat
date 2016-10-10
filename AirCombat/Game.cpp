@@ -3,6 +3,7 @@
 #include "Score.hpp"
 #include "Player.hpp"
 #include "SmartScene.hpp"
+#include "AutoMoveManager.hpp"
 
 #include <QBrush>
 #include <QTimer>
@@ -38,11 +39,6 @@ Game::Game() {
     theScore = new Score();
     theScene->addItem(theScore);
 
-    //Link enemy spawning to a timer
-    QTimer *t = new QTimer();
-    QObject::connect(t, SIGNAL(timeout()), this, SLOT(spawn()));
-    t->start(1000);
-
     //Play background music
     theMusic = new QMediaPlayer();
     theMusic->setMedia(QUrl("qrc:/sounds/sounds/Background.mp3"));
@@ -51,6 +47,14 @@ Game::Game() {
     //Loop the music
     QObject::connect(theMusic, SIGNAL(stateChanged(QMediaPlayer::State)),
                      this, SLOT(restartMusic()));
+
+    //Link enemy spawning to a timer
+    QTimer *t = new QTimer();
+    QObject::connect(t, SIGNAL(timeout()), this, SLOT(spawn()));
+    //t->start(1000);
+
+    //Start moving all AutoMoves
+    AutoMove::start();
 
 	//Make the scene visible
     theWindow->show();

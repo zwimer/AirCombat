@@ -17,7 +17,6 @@ Enemy::Enemy(uint s, uint h) : AutoMove(s), health(h) {}
 //Override the enemy's spawn location if need be
 void Enemy::spawn() {}
 
-#include<QDebug>
 //Decrease health and return true if this enemy is dead
 bool Enemy::decreaseHealth(uint d)
 { health -= d; return health <= 0; }
@@ -114,7 +113,7 @@ bool Enemy::beforeTurn() {
 }
 
 //Call after every move
-void Enemy::afterMove() {
+bool Enemy::afterMove() {
 
     //If the Enemy is off the screen, then delete it
     if (pos().y() > scene()->height()) {
@@ -128,5 +127,5 @@ void Enemy::afterMove() {
     }
 
     //Check if the plane was hit
-    checkHit();
+    return checkHit();
 }

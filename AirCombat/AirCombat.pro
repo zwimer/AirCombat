@@ -30,7 +30,8 @@ SOURCES += main.cpp \
     FastEnemy.cpp \
     SmartScene.cpp \
     AbstractTurret.cpp \
-    GunnerEnemy.cpp
+    GunnerEnemy.cpp \
+    AutoMoveManager.cpp
 
 HEADERS  += \
     Bullet.hpp \
@@ -51,7 +52,8 @@ HEADERS  += \
     SmartScene.hpp \
     AbstractTurret.hpp \
     Turret.hpp \
-    GunnerEnemy.hpp
+    GunnerEnemy.hpp \
+    AutoMoveManager.hpp
 
 FORMS    +=
 

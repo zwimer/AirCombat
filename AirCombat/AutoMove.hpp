@@ -1,23 +1,28 @@
 #ifndef AUTOMOVE_H
 #define AUTOMOVE_H
 
-#include <QObject>
 #include <QGraphicsPixmapItem>
+
+//Forward declarations
+class AutoMoveManager;
 
 //An abstract class moves autonomously
 //Note, must inheret from QObject first!
-class AutoMove : public QObject, public QGraphicsPixmapItem {
-    Q_OBJECT
+class AutoMove : public QGraphicsPixmapItem {
 public:
 
     //Constructor
     AutoMove()=delete;
     AutoMove(int s);
 
-private slots:
+    //Destructor
+    ~AutoMove();
 
     //Move
-    void move();
+    bool move();
+
+    //Start moving all AutoMoves
+    static void start();
 
 protected:
 
@@ -27,11 +32,12 @@ protected:
     //may, so keep this in mind while implementing these
 
     //This will be called before every turn!
-    //Returns false if the turn should be skipped
+    //Returns false if the AutoMove should destruct
     virtual bool beforeTurn()=0;
 
     //This will be called after every move, not turn!
-    virtual void afterMove()=0;
+    //Returns false if the AutoMove should destruct
+    virtual bool afterMove()=0;
 
 private:
 
@@ -43,6 +49,7 @@ private:
     int TurnNumber;
     const int speed;
     const int MoveTurn;
+    static AutoMoveManager *Mgr;
 
     //Allows for more precision in speeds
     //without reduction in video quality
