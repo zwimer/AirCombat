@@ -23,7 +23,7 @@ public:
 
     //Start moving all AutoMoves
     static void start();
-
+ const int speed;   //DELETE
 protected:
 
     //Note, because of speed scaling, an AutoMove
@@ -49,7 +49,7 @@ private:
 
     //Representation
     int TurnNumber;
-    const int speed;
+//    const int speed;
     const int MoveTurn;
     static AutoMoveManager *Mgr;
 

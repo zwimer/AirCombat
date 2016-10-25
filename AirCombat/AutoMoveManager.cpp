@@ -30,7 +30,7 @@ AutoMoveManager::~AutoMoveManager() { delete t; }
 void AutoMoveManager::add(AutoMove *w) { Moving.insert(w); }
 
 //Add old AutoMove from the manager
-void AutoMoveManager::remove(AutoMove *w) { toDelete.push_back(w); }
+void AutoMoveManager::remove(AutoMove *w) { toDelete.insert(w); }
 
 //Play a sound
 void AutoMoveManager::playSound(const char *f) { toPlay.insert(f); }
@@ -65,7 +65,7 @@ void AutoMoveManager::moveAll() {
 
                 //Decrease the player's health and delete the projectile
                 theGame->P1->health->decrease(p->getDamage());
-                toDelete.push_back(p);
+                toDelete.insert(p);
             }
 
     //Delete each deleted AutoMove

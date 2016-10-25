@@ -44,7 +44,7 @@ private:
     QTimer *t;
     std::set<AutoMove*> Moving;
     std::set<const char *> toPlay;
-    std::vector<AutoMove*>toDelete;
+    std::set<AutoMove*>toDelete;
 };
 
 #endif // AUTOMOVEMANAGER_H
