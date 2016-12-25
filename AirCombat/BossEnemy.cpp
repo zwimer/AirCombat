@@ -1,6 +1,6 @@
 #include "BossEnemy.hpp"
 #include "Turret.hpp"
-#include "Missle.hpp"
+#include "Missile.hpp"
 
 //BossEnemy's stats
 const uint BossEnemy::Speed = 20;
@@ -15,8 +15,8 @@ const uint BossEnemy::Height = 206;
 
 //Constructor
 BossEnemy::BossEnemy() : Enemy(Speed, Health),
-    Left(new Turret<Missle>(this, 0, 0, ReloadTime, true)),
-    Right(new Turret<Missle>(this, Width, 0, ReloadTime, true)) {
+    Left(new Turret<Missile>(this, 0, 0, ReloadTime, true)),
+    Right(new Turret<Missile>(this, Width, 0, ReloadTime, true)) {
 
     //Draw the enemy
     setPixmap(QPixmap(":/images/images/BossEnemy.png"));

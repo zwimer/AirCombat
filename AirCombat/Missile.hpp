@@ -1,32 +1,32 @@
-#ifndef MISSLE_H
-#define MISSLE_H
+#ifndef MISSILE_H
+#define MISSILE_H
 
 #include "Projectile.hpp"
 
 //Forward declerations
 class Shooter;
 
-//A missle
-class Missle : public Projectile {
+//A Missile
+class Missile : public Projectile {
 public:
 
     //Constructor
-    Missle() = delete;
-    Missle(const Shooter *o, bool r = false);
+    Missile() = delete;
+    Missile(const Shooter *o, bool r = false);
 
 private:
 
-    //Get the Missle's size
+    //Get the Missile's size
     int getHeight() const;
     int getWidth() const;
 
-    //The Missle's stats
+    //The Missile's stats
     static const uint Speed;
     static const uint Damage;
 
-    //The Missle's size
+    //The Missile's size
     static const int pixelWidth;
     static const int pixelHeight;
 };
 
-#endif // MISSLE_H
+#endif // MISSILE_H

@@ -27,7 +27,7 @@ SOURCES += main.cpp \
     AutoMove.cpp \
     Sound.cpp \
     SoundManager.cpp \
-    Missle.cpp \
+    Missile.cpp \
     FastEnemy.cpp \
     SmartScene.cpp \
     AbstractTurret.cpp \
@@ -49,7 +49,7 @@ HEADERS  += \
     AutoMove.hpp \
     Sound.hpp \
     SoundManager.hpp \
-    Missle.hpp \
+    Missile.hpp \
     FastEnemy.hpp \
     SmartScene.hpp \
     AbstractTurret.hpp \

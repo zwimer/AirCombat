@@ -4,15 +4,15 @@
         <file>images/BasicEnemy.png</file>
         <file>images/Bullet.png</file>
         <file>images/Player.png</file>
-        <file>images/Missle.png</file>
         <file>images/FastEnemy.png</file>
         <file>images/BasicEnemyInjured.png</file>
         <file>images/GunnerEnemy.png</file>
         <file>images/BossEnemy.png</file>
+        <file>images/Missile.png</file>
     </qresource>
     <qresource prefix="/sounds">
         <file>sounds/Background.mp3</file>
         <file>sounds/Bullet.mp3</file>
-        <file>sounds/Missle.mp3</file>
+        <file>sounds/Missile.mp3</file>
     </qresource>
 </RCC>
