@@ -10,7 +10,7 @@ AirCombat is a simple game with simple rules:
 
 This game is my first experience using QT, and a way for me to practice doing so. I simply made this game to familiarize myself with some basic QT. It has yet to have any optimzations applied and yet to be fully finished. For information regarding preformance boosting optimizations click here TODO.
 
-#Devolpers
+###Devolpers
 
 Please read the wiki issues page before diving in TODO
 
