@@ -8,11 +8,11 @@ AirCombat is a simple game with simple rules:
 
 ##Disclaimer
 
-This game is my first experience using QT, and a way for me to practice doing so. I simply made this game to familiarize myself with some basic QT. It has yet to have any optimzations applied and yet to be fully finished. For information regarding preformance boosting optimizations click here TODO.
+This game is my first experience using QT, and a way for me to practice doing so. I simply made this game to familiarize myself with some basic QT. It has yet to have any optimzations applied and yet to be fully finished. For information regarding preformance boosting optimizations visit the [Future Plans](https://github.com/zwimer/AirCombat/wiki/Future-Plans) wiki page.
 
 ###Devolpers
 
-Please read the wiki issues page before diving in TODO
+Please read the [Issues](https://github.com/zwimer/AirCombat/wiki/Issues) wiki page before diving in. Also note that there are some stray comments in the files relating to what is listed in future plans.
 
 ##Requirements
 
