@@ -1,3 +1,5 @@
+Seperate GUI from processing for massive increase in efficiency.
+
 Todo:
 	Make screen flash red or something when health decreases
 

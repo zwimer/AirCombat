@@ -4,10 +4,10 @@
 #include "Game.hpp"
 #include "SmartScene.hpp"
 
-#include "GunnerEnemy.hpp"    //DELETE
-#include "BasicEnemy.hpp"    //DELETE
-#include "FastEnemy.hpp"    //DELETE
-#include "BossEnemy.hpp"    //DELETE
+#include "GunnerEnemy.hpp"    	//DELETE
+#include "BasicEnemy.hpp"    	//DELETE
+#include "FastEnemy.hpp"    	//DELETE
+#include "BossEnemy.hpp"    	//DELETE
 
 #include <vector>
 #include <stdlib.h>
@@ -32,6 +32,7 @@ Enemy* Enemy::spawnEnemy() {
     Enemy *e;
 
     //Randomize which
+	//TODO: change to use std::uniform_int_distribution
     int r = rand()%20;
     if (r<11) e = new BasicEnemy();           //CHANGE
     else if (r<15) e = new FastEnemy();

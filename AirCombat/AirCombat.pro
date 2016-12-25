@@ -12,6 +12,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = AirCombat
 TEMPLATE = app
 
+#QMAKE_CXXFLAGS += -O3 -march=native -flto -D TEST
 
 SOURCES += main.cpp \
     Bullet.cpp \
