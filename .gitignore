@@ -1,4 +1,6 @@
 build-AirCombat*/
 HelpfulLinks/
 *.autosave
+*/build/*
+build/*
 
